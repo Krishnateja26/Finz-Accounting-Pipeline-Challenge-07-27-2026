@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: finz-accounting-pipeline
+    runtime: docker
+    plan: free
+    rootDir: tmp_finz_ui_zip/finz-accounting-challenge
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_NAME
+        value: Finz Accounting Pipeline
+      - key: ENVIRONMENT
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB_NAME
+        value: finz_accounting
+      - key: SECRET_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.6-flash
+      - key: QBO_CLIENT_ID
+        sync: false
+      - key: QBO_CLIENT_SECRET
+        sync: false
+      - key: QBO_REDIRECT_URI
+        value: https://finz-accounting-pipeline.onrender.com/api/quickbooks/callback
+      - key: QBO_ENVIRONMENT
+        value: sandbox
+      - key: ADMIN_RESET_TOKEN
+        sync: false
