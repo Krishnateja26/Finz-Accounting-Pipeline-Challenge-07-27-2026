@@ -1,0 +1,2002 @@
+[
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0043",
+    "Transaction Date": "2026-04-01T00:00:00",
+    "Posted Date": "2026-04-01T00:00:00",
+    "Description": "ACH PARKSIDE COMMERCIAL MGMT RENT APR",
+    "Amount (USD)": -8200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0001",
+    "Transaction Date": "2026-04-02T00:00:00",
+    "Posted Date": "2026-04-02T00:00:00",
+    "Description": "ACH CREDIT BLUEBIRD PROPERTY MANAGEMENT INV 4100",
+    "Amount (USD)": 3425.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04_15_to_2026_05_15.csv",
+    "Bank Transaction ID": "BF-202604-0001",
+    "Transaction Date": "2026-04-02T00:00:00",
+    "Posted Date": "2026-04-02T00:00:00",
+    "Description": "ACH CREDIT BLUEBIRD PROPERTY MANAGEMENT INV 4100",
+    "Amount (USD)": 3425.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0065",
+    "Transaction Date": "2026-04-02T00:00:00",
+    "Posted Date": "2026-04-02T00:00:00",
+    "Description": "WIRE FROM MAYA PATEL OWNER CAPITAL",
+    "Amount (USD)": 25000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0014",
+    "Transaction Date": "2026-04-03T00:00:00",
+    "Posted Date": "2026-04-04T00:00:00",
+    "Description": "MOBILE DEPOSIT LIBERTY DAY SCHOOL JOB 4213",
+    "Amount (USD)": 3150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0028",
+    "Transaction Date": "2026-04-03T00:00:00",
+    "Posted Date": "2026-04-04T00:00:00",
+    "Description": "THE HOME DEPOT #1212 REF 401",
+    "Amount (USD)": -875.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0002",
+    "Transaction Date": "2026-04-04T00:00:00",
+    "Posted Date": "2026-04-05T00:00:00",
+    "Description": "MOBILE DEPOSIT NORTHSTAR DENTAL GROUP JOB 4201",
+    "Amount (USD)": 3225.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0019",
+    "Transaction Date": "2026-04-04T00:00:00",
+    "Posted Date": "2026-04-05T00:00:00",
+    "Description": "ACH CREDIT GREENLINE FITNESS INSTALL 4500",
+    "Amount (USD)": 8950.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0015",
+    "Transaction Date": "2026-04-05T00:00:00",
+    "Posted Date": "2026-04-05T00:00:00",
+    "Description": "CHECK DEP WEST END PHARMACY SERVICE 4214",
+    "Amount (USD)": 1725.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0025",
+    "Transaction Date": "2026-04-05T00:00:00",
+    "Posted Date": "2026-04-05T00:00:00",
+    "Description": "ACH CREDIT METRO SELF STORAGE MAINT PLAN APR",
+    "Amount (USD)": 900.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0003",
+    "Transaction Date": "2026-04-06T00:00:00",
+    "Posted Date": "2026-04-06T00:00:00",
+    "Description": "CHECK DEP HARBORVIEW APARTMENTS SERVICE 4202",
+    "Amount (USD)": 2000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0029",
+    "Transaction Date": "2026-04-06T00:00:00",
+    "Posted Date": "2026-04-07T00:00:00",
+    "Description": "LOWES.COM REF 402",
+    "Amount (USD)": -2200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0044",
+    "Transaction Date": "2026-04-06T00:00:00",
+    "Posted Date": "2026-04-07T00:00:00",
+    "Description": "SHELL OIL 574221",
+    "Amount (USD)": -285.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0016",
+    "Transaction Date": "2026-04-07T00:00:00",
+    "Posted Date": "2026-04-08T00:00:00",
+    "Description": "ZELLE FROM BLUEBIRD PROPERTY MANAGEMENT REPAIR 4215",
+    "Amount (USD)": 3150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0036",
+    "Transaction Date": "2026-04-07T00:00:00",
+    "Posted Date": "2026-04-08T00:00:00",
+    "Description": "ACH APEX ELECTRICAL APR-01",
+    "Amount (USD)": -1850.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0004",
+    "Transaction Date": "2026-04-08T00:00:00",
+    "Posted Date": "2026-04-09T00:00:00",
+    "Description": "ZELLE FROM GREENLINE FITNESS REPAIR 4203",
+    "Amount (USD)": 2300.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0020",
+    "Transaction Date": "2026-04-08T00:00:00",
+    "Posted Date": "2026-04-08T00:00:00",
+    "Description": "CHECK DEPOSIT OAK & STONE REALTY PROJECT 4501",
+    "Amount (USD)": 9750.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0048",
+    "Transaction Date": "2026-04-08T00:00:00",
+    "Posted Date": "2026-04-08T00:00:00",
+    "Description": "INTUIT *QUICKBOOKS ONLINE",
+    "Amount (USD)": -150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0017",
+    "Transaction Date": "2026-04-09T00:00:00",
+    "Posted Date": "2026-04-09T00:00:00",
+    "Description": "ACH CREDIT NORTHSTAR DENTAL GROUP INV 4116",
+    "Amount (USD)": 1725.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0030",
+    "Transaction Date": "2026-04-09T00:00:00",
+    "Posted Date": "2026-04-10T00:00:00",
+    "Description": "FERGUSON.COM REF 403",
+    "Amount (USD)": -3150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0053",
+    "Transaction Date": "2026-04-09T00:00:00",
+    "Posted Date": "2026-04-09T00:00:00",
+    "Description": "HISCOX BUSINESS INSURANCE APR",
+    "Amount (USD)": -1225.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0005",
+    "Transaction Date": "2026-04-10T00:00:00",
+    "Posted Date": "2026-04-10T00:00:00",
+    "Description": "ACH CREDIT OAK & STONE REALTY INV 4104",
+    "Amount (USD)": 1475.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0061",
+    "Transaction Date": "2026-04-10T00:00:00",
+    "Posted Date": "2026-04-10T00:00:00",
+    "Description": "ONLINE TRANSFER TO TAX RESERVE TAX RESERVE TRANSFER APR-1",
+    "Amount (USD)": -5000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "tax_reserve_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0062",
+    "Transaction Date": "2026-04-10T00:00:00",
+    "Posted Date": "2026-04-10T00:00:00",
+    "Description": "ONLINE TRANSFER FROM OPERATING TAX RESERVE TRANSFER APR-1",
+    "Amount (USD)": 5000.0,
+    "Currency": "USD",
+    "Bank Account": "Tax Reserve"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0018",
+    "Transaction Date": "2026-04-11T00:00:00",
+    "Posted Date": "2026-04-12T00:00:00",
+    "Description": "MOBILE DEPOSIT HARBORVIEW APARTMENTS JOB 4217",
+    "Amount (USD)": 2300.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0051",
+    "Transaction Date": "2026-04-11T00:00:00",
+    "Posted Date": "2026-04-12T00:00:00",
+    "Description": "GOOGLE ADS 5412",
+    "Amount (USD)": -1850.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0006",
+    "Transaction Date": "2026-04-12T00:00:00",
+    "Posted Date": "2026-04-13T00:00:00",
+    "Description": "MOBILE DEPOSIT RIVERSIDE PEDIATRICS JOB 4205",
+    "Amount (USD)": 2900.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0021",
+    "Transaction Date": "2026-04-12T00:00:00",
+    "Posted Date": "2026-04-13T00:00:00",
+    "Description": "WIRE RIVERSIDE PEDIATRICS EQUIPMENT INSTALL 4502",
+    "Amount (USD)": 10800.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0031",
+    "Transaction Date": "2026-04-12T00:00:00",
+    "Posted Date": "2026-04-13T00:00:00",
+    "Description": "WW GRAINGER 877-202-2594 REF 404",
+    "Amount (USD)": -2675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0037",
+    "Transaction Date": "2026-04-12T00:00:00",
+    "Posted Date": "2026-04-13T00:00:00",
+    "Description": "RIVERA PLBG CO APR-02",
+    "Amount (USD)": -5100.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0045",
+    "Transaction Date": "2026-04-12T00:00:00",
+    "Posted Date": "2026-04-13T00:00:00",
+    "Description": "BP#98231 NEW YORK",
+    "Amount (USD)": -520.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0054",
+    "Transaction Date": "2026-04-12T00:00:00",
+    "Posted Date": "2026-04-13T00:00:00",
+    "Description": "CON EDISON AUTOPAY",
+    "Amount (USD)": -780.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0007",
+    "Transaction Date": "2026-04-14T00:00:00",
+    "Posted Date": "2026-04-14T00:00:00",
+    "Description": "CHECK DEP SUMMIT LEARNING CENTER SERVICE 4206",
+    "Amount (USD)": 2300.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0026",
+    "Transaction Date": "2026-04-14T00:00:00",
+    "Posted Date": "2026-04-14T00:00:00",
+    "Description": "AUTO PAY PARKVIEW SENIOR LIVING SERVICE PLAN APR",
+    "Amount (USD)": 1250.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0032",
+    "Transaction Date": "2026-04-15T00:00:00",
+    "Posted Date": "2026-04-16T00:00:00",
+    "Description": "SUPPLYHOUSE.COM REF 405",
+    "Amount (USD)": -1125.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0041",
+    "Transaction Date": "2026-04-15T00:00:00",
+    "Posted Date": "2026-04-15T00:00:00",
+    "Description": "ADP PAYROLL APR FIRST HALF",
+    "Amount (USD)": -12650.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0049",
+    "Transaction Date": "2026-04-15T00:00:00",
+    "Posted Date": "2026-04-15T00:00:00",
+    "Description": "GOOGLE WORKSPACE BRIGHTFIX",
+    "Amount (USD)": -420.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0008",
+    "Transaction Date": "2026-04-16T00:00:00",
+    "Posted Date": "2026-04-17T00:00:00",
+    "Description": "ZELLE FROM METRO SELF STORAGE REPAIR 4207",
+    "Amount (USD)": 1950.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0022",
+    "Transaction Date": "2026-04-16T00:00:00",
+    "Posted Date": "2026-04-16T00:00:00",
+    "Description": "ACH CREDIT SUMMIT LEARNING CENTER INSTALL 4503",
+    "Amount (USD)": 6500.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0038",
+    "Transaction Date": "2026-04-17T00:00:00",
+    "Posted Date": "2026-04-18T00:00:00",
+    "Description": "ACH NORTHLINE HVAC APR-03",
+    "Amount (USD)": -1850.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0009",
+    "Transaction Date": "2026-04-18T00:00:00",
+    "Posted Date": "2026-04-18T00:00:00",
+    "Description": "ACH CREDIT PARKVIEW SENIOR LIVING INV 4108",
+    "Amount (USD)": 3200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0033",
+    "Transaction Date": "2026-04-18T00:00:00",
+    "Posted Date": "2026-04-19T00:00:00",
+    "Description": "CES #NYC-14 REF 406",
+    "Amount (USD)": -875.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0046",
+    "Transaction Date": "2026-04-18T00:00:00",
+    "Posted Date": "2026-04-19T00:00:00",
+    "Description": "EXXONMOBIL 48122",
+    "Amount (USD)": -395.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0056",
+    "Transaction Date": "2026-04-18T00:00:00",
+    "Posted Date": "2026-04-19T00:00:00",
+    "Description": "ACH CLEARLEDGER CPA MONTHLY APR",
+    "Amount (USD)": -1650.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0010",
+    "Transaction Date": "2026-04-20T00:00:00",
+    "Posted Date": "2026-04-21T00:00:00",
+    "Description": "MOBILE DEPOSIT CEDAR GROVE MARKET JOB 4209",
+    "Amount (USD)": 1975.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0023",
+    "Transaction Date": "2026-04-20T00:00:00",
+    "Posted Date": "2026-04-21T00:00:00",
+    "Description": "CHECK DEPOSIT METRO SELF STORAGE PROJECT 4504",
+    "Amount (USD)": 9750.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0058",
+    "Transaction Date": "2026-04-20T00:00:00",
+    "Posted Date": "2026-04-21T00:00:00",
+    "Description": "STAPLES 001422 OFFICE SUPPLIES",
+    "Amount (USD)": -310.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0034",
+    "Transaction Date": "2026-04-21T00:00:00",
+    "Posted Date": "2026-04-22T00:00:00",
+    "Description": "ABC PLUMBING SUPPLY REF 407",
+    "Amount (USD)": -2675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0052",
+    "Transaction Date": "2026-04-21T00:00:00",
+    "Posted Date": "2026-04-22T00:00:00",
+    "Description": "YELP ADVERTISING",
+    "Amount (USD)": -950.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0011",
+    "Transaction Date": "2026-04-22T00:00:00",
+    "Posted Date": "2026-04-22T00:00:00",
+    "Description": "CHECK DEP HUDSON VETERINARY CLINIC SERVICE 4210",
+    "Amount (USD)": 1925.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0039",
+    "Transaction Date": "2026-04-22T00:00:00",
+    "Posted Date": "2026-04-23T00:00:00",
+    "Description": "PRECISION INSTALL SVCS APR-04",
+    "Amount (USD)": -2400.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0050",
+    "Transaction Date": "2026-04-22T00:00:00",
+    "Posted Date": "2026-04-22T00:00:00",
+    "Description": "SERVICETITAN SUBSCRIPTION",
+    "Amount (USD)": -875.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0055",
+    "Transaction Date": "2026-04-22T00:00:00",
+    "Posted Date": "2026-04-23T00:00:00",
+    "Description": "VERIZON BUSINESS AUTOPAY",
+    "Amount (USD)": -390.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0027",
+    "Transaction Date": "2026-04-23T00:00:00",
+    "Posted Date": "2026-04-23T00:00:00",
+    "Description": "ACH CREDIT CEDAR GROVE MARKET MAINT PLAN APR",
+    "Amount (USD)": 1500.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0059",
+    "Transaction Date": "2026-04-23T00:00:00",
+    "Posted Date": "2026-04-24T00:00:00",
+    "Description": "FLEET AUTO CARE SERVICE VAN 2",
+    "Amount (USD)": -740.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0012",
+    "Transaction Date": "2026-04-24T00:00:00",
+    "Posted Date": "2026-04-25T00:00:00",
+    "Description": "ZELLE FROM EASTSIDE COMMUNITY CENTER REPAIR 4211",
+    "Amount (USD)": 1500.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0024",
+    "Transaction Date": "2026-04-24T00:00:00",
+    "Posted Date": "2026-04-24T00:00:00",
+    "Description": "WIRE PARKVIEW SENIOR LIVING EQUIPMENT INSTALL 4505",
+    "Amount (USD)": 7250.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0035",
+    "Transaction Date": "2026-04-24T00:00:00",
+    "Posted Date": "2026-04-25T00:00:00",
+    "Description": "HOMEDEPOT.COM 800-430-3376 REF 408",
+    "Amount (USD)": -1450.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0047",
+    "Transaction Date": "2026-04-24T00:00:00",
+    "Posted Date": "2026-04-25T00:00:00",
+    "Description": "SPEEDWAY 07119",
+    "Amount (USD)": -285.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0063",
+    "Transaction Date": "2026-04-25T00:00:00",
+    "Posted Date": "2026-04-25T00:00:00",
+    "Description": "ONLINE TRANSFER TO TAX RESERVE TAX RESERVE TRANSFER APR-2",
+    "Amount (USD)": -7000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "tax_reserve_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0064",
+    "Transaction Date": "2026-04-25T00:00:00",
+    "Posted Date": "2026-04-25T00:00:00",
+    "Description": "ONLINE TRANSFER FROM OPERATING TAX RESERVE TRANSFER APR-2",
+    "Amount (USD)": 7000.0,
+    "Currency": "USD",
+    "Bank Account": "Tax Reserve"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0013",
+    "Transaction Date": "2026-04-26T00:00:00",
+    "Posted Date": "2026-04-26T00:00:00",
+    "Description": "ACH CREDIT BEACON OFFICE SUITES INV 4112",
+    "Amount (USD)": 2550.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0060",
+    "Transaction Date": "2026-04-26T00:00:00",
+    "Posted Date": "2026-04-26T00:00:00",
+    "Description": "ACH REFUND TO HARBORVIEW APARTMENTS JOB 4800",
+    "Amount (USD)": -1250.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0040",
+    "Transaction Date": "2026-04-27T00:00:00",
+    "Posted Date": "2026-04-28T00:00:00",
+    "Description": "ACH METRO HANDYMAN APR-05",
+    "Amount (USD)": -5100.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0057",
+    "Transaction Date": "2026-04-28T00:00:00",
+    "Posted Date": "2026-04-28T00:00:00",
+    "Description": "MONTHLY SERVICE FEE",
+    "Amount (USD)": -35.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_04.csv",
+    "Bank Transaction ID": "BF-202604-0042",
+    "Transaction Date": "2026-04-29T00:00:00",
+    "Posted Date": "2026-04-29T00:00:00",
+    "Description": "ADP PAYROLL APR SECOND HALF",
+    "Amount (USD)": -13150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0108",
+    "Transaction Date": "2026-05-01T00:00:00",
+    "Posted Date": "2026-05-01T00:00:00",
+    "Description": "ACH PARKSIDE COMMERCIAL MGMT RENT MAY",
+    "Amount (USD)": -8200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0066",
+    "Transaction Date": "2026-05-02T00:00:00",
+    "Posted Date": "2026-05-02T00:00:00",
+    "Description": "MOBILE DEPOSIT GREENLINE FITNESS JOB 5200",
+    "Amount (USD)": 1950.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0079",
+    "Transaction Date": "2026-05-03T00:00:00",
+    "Posted Date": "2026-05-04T00:00:00",
+    "Description": "CHECK DEP NORTHSTAR DENTAL GROUP SERVICE 5213",
+    "Amount (USD)": 2925.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0093",
+    "Transaction Date": "2026-05-03T00:00:00",
+    "Posted Date": "2026-05-04T00:00:00",
+    "Description": "LOWES.COM REF 501",
+    "Amount (USD)": -2200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0067",
+    "Transaction Date": "2026-05-04T00:00:00",
+    "Posted Date": "2026-05-05T00:00:00",
+    "Description": "CHECK DEP OAK & STONE REALTY SERVICE 5201",
+    "Amount (USD)": 2925.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0084",
+    "Transaction Date": "2026-05-04T00:00:00",
+    "Posted Date": "2026-05-05T00:00:00",
+    "Description": "CHECK DEPOSIT SUMMIT LEARNING CENTER PROJECT 5500",
+    "Amount (USD)": 8950.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0080",
+    "Transaction Date": "2026-05-05T00:00:00",
+    "Posted Date": "2026-05-05T00:00:00",
+    "Description": "ZELLE FROM HARBORVIEW APARTMENTS REPAIR 5214",
+    "Amount (USD)": 2875.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0090",
+    "Transaction Date": "2026-05-05T00:00:00",
+    "Posted Date": "2026-05-05T00:00:00",
+    "Description": "ACH CREDIT EASTSIDE COMMUNITY CENTER MAINT PLAN MAY",
+    "Amount (USD)": 900.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0068",
+    "Transaction Date": "2026-05-06T00:00:00",
+    "Posted Date": "2026-05-06T00:00:00",
+    "Description": "ZELLE FROM RIVERSIDE PEDIATRICS REPAIR 5202",
+    "Amount (USD)": 1525.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0094",
+    "Transaction Date": "2026-05-06T00:00:00",
+    "Posted Date": "2026-05-07T00:00:00",
+    "Description": "FERGUSON.COM REF 502",
+    "Amount (USD)": -1450.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0109",
+    "Transaction Date": "2026-05-06T00:00:00",
+    "Posted Date": "2026-05-07T00:00:00",
+    "Description": "SHELL OIL 574221",
+    "Amount (USD)": -520.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0081",
+    "Transaction Date": "2026-05-07T00:00:00",
+    "Posted Date": "2026-05-08T00:00:00",
+    "Description": "ACH CREDIT GREENLINE FITNESS INV 5115",
+    "Amount (USD)": 2525.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0101",
+    "Transaction Date": "2026-05-07T00:00:00",
+    "Posted Date": "2026-05-08T00:00:00",
+    "Description": "RIVERA PLBG CO MAY-01",
+    "Amount (USD)": -1850.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0069",
+    "Transaction Date": "2026-05-08T00:00:00",
+    "Posted Date": "2026-05-09T00:00:00",
+    "Description": "ACH CREDIT SUMMIT LEARNING CENTER INV 5103",
+    "Amount (USD)": 1475.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0085",
+    "Transaction Date": "2026-05-08T00:00:00",
+    "Posted Date": "2026-05-08T00:00:00",
+    "Description": "WIRE METRO SELF STORAGE EQUIPMENT INSTALL 5501",
+    "Amount (USD)": 10800.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0113",
+    "Transaction Date": "2026-05-08T00:00:00",
+    "Posted Date": "2026-05-08T00:00:00",
+    "Description": "INTUIT *QUICKBOOKS ONLINE",
+    "Amount (USD)": -150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0082",
+    "Transaction Date": "2026-05-09T00:00:00",
+    "Posted Date": "2026-05-09T00:00:00",
+    "Description": "MOBILE DEPOSIT OAK & STONE REALTY JOB 5216",
+    "Amount (USD)": 2300.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0095",
+    "Transaction Date": "2026-05-09T00:00:00",
+    "Posted Date": "2026-05-10T00:00:00",
+    "Description": "WW GRAINGER 877-202-2594 REF 503",
+    "Amount (USD)": -3875.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0118",
+    "Transaction Date": "2026-05-09T00:00:00",
+    "Posted Date": "2026-05-09T00:00:00",
+    "Description": "HISCOX BUSINESS INSURANCE MAY",
+    "Amount (USD)": -1225.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0070",
+    "Transaction Date": "2026-05-10T00:00:00",
+    "Posted Date": "2026-05-10T00:00:00",
+    "Description": "MOBILE DEPOSIT METRO SELF STORAGE JOB 5204",
+    "Amount (USD)": 3200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0126",
+    "Transaction Date": "2026-05-10T00:00:00",
+    "Posted Date": "2026-05-10T00:00:00",
+    "Description": "ONLINE TRANSFER TO TAX RESERVE TAX RESERVE TRANSFER MAY-1",
+    "Amount (USD)": -6000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "tax_reserve_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0127",
+    "Transaction Date": "2026-05-10T00:00:00",
+    "Posted Date": "2026-05-10T00:00:00",
+    "Description": "ONLINE TRANSFER FROM OPERATING TAX RESERVE TRANSFER MAY-1",
+    "Amount (USD)": 6000.0,
+    "Currency": "USD",
+    "Bank Account": "Tax Reserve"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0083",
+    "Transaction Date": "2026-05-11T00:00:00",
+    "Posted Date": "2026-05-12T00:00:00",
+    "Description": "CHECK DEP RIVERSIDE PEDIATRICS SERVICE 5217",
+    "Amount (USD)": 3200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0116",
+    "Transaction Date": "2026-05-11T00:00:00",
+    "Posted Date": "2026-05-12T00:00:00",
+    "Description": "GOOGLE ADS 5412",
+    "Amount (USD)": -1950.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0071",
+    "Transaction Date": "2026-05-12T00:00:00",
+    "Posted Date": "2026-05-13T00:00:00",
+    "Description": "CHECK DEP PARKVIEW SENIOR LIVING SERVICE 5205",
+    "Amount (USD)": 3150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05_15_to_2026_06_15.csv",
+    "Bank Transaction ID": "BF-202605-0071",
+    "Transaction Date": "2026-05-12T00:00:00",
+    "Posted Date": "2026-05-13T00:00:00",
+    "Description": "CHECK DEP PARKVIEW SENIOR LIVING SERVICE 5205",
+    "Amount (USD)": 3150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0086",
+    "Transaction Date": "2026-05-12T00:00:00",
+    "Posted Date": "2026-05-13T00:00:00",
+    "Description": "ACH CREDIT PARKVIEW SENIOR LIVING INSTALL 5502",
+    "Amount (USD)": 10800.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0096",
+    "Transaction Date": "2026-05-12T00:00:00",
+    "Posted Date": "2026-05-13T00:00:00",
+    "Description": "SUPPLYHOUSE.COM REF 504",
+    "Amount (USD)": -2200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05_15_to_2026_06_15.csv",
+    "Bank Transaction ID": "BF-202605-0096",
+    "Transaction Date": "2026-05-12T00:00:00",
+    "Posted Date": "2026-05-13T00:00:00",
+    "Description": "SUPPLYHOUSE.COM REF 504",
+    "Amount (USD)": -2200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0102",
+    "Transaction Date": "2026-05-12T00:00:00",
+    "Posted Date": "2026-05-13T00:00:00",
+    "Description": "ACH NORTHLINE HVAC MAY-02",
+    "Amount (USD)": -3600.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0110",
+    "Transaction Date": "2026-05-12T00:00:00",
+    "Posted Date": "2026-05-13T00:00:00",
+    "Description": "BP#98231 NEW YORK",
+    "Amount (USD)": -285.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0119",
+    "Transaction Date": "2026-05-12T00:00:00",
+    "Posted Date": "2026-05-13T00:00:00",
+    "Description": "CON EDISON AUTOPAY",
+    "Amount (USD)": -825.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0072",
+    "Transaction Date": "2026-05-14T00:00:00",
+    "Posted Date": "2026-05-14T00:00:00",
+    "Description": "ZELLE FROM CEDAR GROVE MARKET REPAIR 5206",
+    "Amount (USD)": 2475.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0091",
+    "Transaction Date": "2026-05-14T00:00:00",
+    "Posted Date": "2026-05-14T00:00:00",
+    "Description": "AUTO PAY BEACON OFFICE SUITES SERVICE PLAN MAY",
+    "Amount (USD)": 1250.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0097",
+    "Transaction Date": "2026-05-15T00:00:00",
+    "Posted Date": "2026-05-16T00:00:00",
+    "Description": "CES #NYC-14 REF 505",
+    "Amount (USD)": -1125.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0106",
+    "Transaction Date": "2026-05-15T00:00:00",
+    "Posted Date": "2026-05-15T00:00:00",
+    "Description": "ADP PAYROLL MAY FIRST HALF",
+    "Amount (USD)": -13100.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0114",
+    "Transaction Date": "2026-05-15T00:00:00",
+    "Posted Date": "2026-05-15T00:00:00",
+    "Description": "GOOGLE WORKSPACE BRIGHTFIX",
+    "Amount (USD)": -420.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0073",
+    "Transaction Date": "2026-05-16T00:00:00",
+    "Posted Date": "2026-05-17T00:00:00",
+    "Description": "ACH CREDIT HUDSON VETERINARY CLINIC INV 5107",
+    "Amount (USD)": 2250.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0087",
+    "Transaction Date": "2026-05-16T00:00:00",
+    "Posted Date": "2026-05-16T00:00:00",
+    "Description": "CHECK DEPOSIT CEDAR GROVE MARKET PROJECT 5503",
+    "Amount (USD)": 10800.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0103",
+    "Transaction Date": "2026-05-17T00:00:00",
+    "Posted Date": "2026-05-18T00:00:00",
+    "Description": "PRECISION INSTALL SVCS MAY-03",
+    "Amount (USD)": -3600.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0130",
+    "Transaction Date": "2026-05-17T00:00:00",
+    "Posted Date": "2026-05-18T00:00:00",
+    "Description": "MILWAUKEE COMMERCIAL TOOL PACKAGE",
+    "Amount (USD)": -6800.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0074",
+    "Transaction Date": "2026-05-18T00:00:00",
+    "Posted Date": "2026-05-18T00:00:00",
+    "Description": "MOBILE DEPOSIT EASTSIDE COMMUNITY CENTER JOB 5208",
+    "Amount (USD)": 3200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0098",
+    "Transaction Date": "2026-05-18T00:00:00",
+    "Posted Date": "2026-05-19T00:00:00",
+    "Description": "ABC PLUMBING SUPPLY REF 506",
+    "Amount (USD)": -3150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0111",
+    "Transaction Date": "2026-05-18T00:00:00",
+    "Posted Date": "2026-05-19T00:00:00",
+    "Description": "EXXONMOBIL 48122",
+    "Amount (USD)": -285.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0121",
+    "Transaction Date": "2026-05-18T00:00:00",
+    "Posted Date": "2026-05-19T00:00:00",
+    "Description": "ACH CLEARLEDGER CPA MONTHLY MAY",
+    "Amount (USD)": -1650.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0075",
+    "Transaction Date": "2026-05-20T00:00:00",
+    "Posted Date": "2026-05-21T00:00:00",
+    "Description": "CHECK DEP BEACON OFFICE SUITES SERVICE 5209",
+    "Amount (USD)": 1725.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0088",
+    "Transaction Date": "2026-05-20T00:00:00",
+    "Posted Date": "2026-05-21T00:00:00",
+    "Description": "WIRE HUDSON VETERINARY CLINIC EQUIPMENT INSTALL 5504",
+    "Amount (USD)": 6500.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0123",
+    "Transaction Date": "2026-05-20T00:00:00",
+    "Posted Date": "2026-05-21T00:00:00",
+    "Description": "STAPLES 001422 OFFICE SUPPLIES",
+    "Amount (USD)": -310.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0099",
+    "Transaction Date": "2026-05-21T00:00:00",
+    "Posted Date": "2026-05-22T00:00:00",
+    "Description": "HOMEDEPOT.COM 800-430-3376 REF 507",
+    "Amount (USD)": -875.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0117",
+    "Transaction Date": "2026-05-21T00:00:00",
+    "Posted Date": "2026-05-22T00:00:00",
+    "Description": "YELP ADVERTISING",
+    "Amount (USD)": -1000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0076",
+    "Transaction Date": "2026-05-22T00:00:00",
+    "Posted Date": "2026-05-22T00:00:00",
+    "Description": "ZELLE FROM LIBERTY DAY SCHOOL REPAIR 5210",
+    "Amount (USD)": 2300.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0104",
+    "Transaction Date": "2026-05-22T00:00:00",
+    "Posted Date": "2026-05-23T00:00:00",
+    "Description": "ACH METRO HANDYMAN MAY-04",
+    "Amount (USD)": -1850.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0115",
+    "Transaction Date": "2026-05-22T00:00:00",
+    "Posted Date": "2026-05-22T00:00:00",
+    "Description": "SERVICETITAN SUBSCRIPTION",
+    "Amount (USD)": -875.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0120",
+    "Transaction Date": "2026-05-22T00:00:00",
+    "Posted Date": "2026-05-23T00:00:00",
+    "Description": "VERIZON BUSINESS AUTOPAY",
+    "Amount (USD)": -390.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0092",
+    "Transaction Date": "2026-05-23T00:00:00",
+    "Posted Date": "2026-05-23T00:00:00",
+    "Description": "ACH CREDIT LIBERTY DAY SCHOOL MAINT PLAN MAY",
+    "Amount (USD)": 1500.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0124",
+    "Transaction Date": "2026-05-23T00:00:00",
+    "Posted Date": "2026-05-24T00:00:00",
+    "Description": "FLEET AUTO CARE SERVICE VAN 2",
+    "Amount (USD)": -915.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0077",
+    "Transaction Date": "2026-05-24T00:00:00",
+    "Posted Date": "2026-05-25T00:00:00",
+    "Description": "ACH CREDIT WEST END PHARMACY INV 5111",
+    "Amount (USD)": 2300.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0089",
+    "Transaction Date": "2026-05-24T00:00:00",
+    "Posted Date": "2026-05-24T00:00:00",
+    "Description": "ACH CREDIT EASTSIDE COMMUNITY CENTER INSTALL 5505",
+    "Amount (USD)": 11600.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0100",
+    "Transaction Date": "2026-05-24T00:00:00",
+    "Posted Date": "2026-05-25T00:00:00",
+    "Description": "LOWE'S HOME IMPROVEMENT REF 508",
+    "Amount (USD)": -2675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0112",
+    "Transaction Date": "2026-05-24T00:00:00",
+    "Posted Date": "2026-05-25T00:00:00",
+    "Description": "SPEEDWAY 07119",
+    "Amount (USD)": -455.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0128",
+    "Transaction Date": "2026-05-25T00:00:00",
+    "Posted Date": "2026-05-25T00:00:00",
+    "Description": "ONLINE TRANSFER TO TAX RESERVE TAX RESERVE TRANSFER MAY-2",
+    "Amount (USD)": -8000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "tax_reserve_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0129",
+    "Transaction Date": "2026-05-25T00:00:00",
+    "Posted Date": "2026-05-25T00:00:00",
+    "Description": "ONLINE TRANSFER FROM OPERATING TAX RESERVE TRANSFER MAY-2",
+    "Amount (USD)": 8000.0,
+    "Currency": "USD",
+    "Bank Account": "Tax Reserve"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0078",
+    "Transaction Date": "2026-05-26T00:00:00",
+    "Posted Date": "2026-05-26T00:00:00",
+    "Description": "MOBILE DEPOSIT BLUEBIRD PROPERTY MANAGEMENT JOB 5212",
+    "Amount (USD)": 2850.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0125",
+    "Transaction Date": "2026-05-26T00:00:00",
+    "Posted Date": "2026-05-26T00:00:00",
+    "Description": "ACH REFUND TO METRO SELF STORAGE JOB 5801",
+    "Amount (USD)": -1675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0105",
+    "Transaction Date": "2026-05-27T00:00:00",
+    "Posted Date": "2026-05-28T00:00:00",
+    "Description": "APEX ELEC LLC INV MAY-05",
+    "Amount (USD)": -3600.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0122",
+    "Transaction Date": "2026-05-28T00:00:00",
+    "Posted Date": "2026-05-28T00:00:00",
+    "Description": "MONTHLY SERVICE FEE",
+    "Amount (USD)": -35.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_05.csv",
+    "Bank Transaction ID": "BF-202605-0107",
+    "Transaction Date": "2026-05-29T00:00:00",
+    "Posted Date": "2026-05-29T00:00:00",
+    "Description": "ADP PAYROLL MAY SECOND HALF",
+    "Amount (USD)": -13650.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0173",
+    "Transaction Date": "2026-06-01T00:00:00",
+    "Posted Date": "2026-06-01T00:00:00",
+    "Description": "ACH PARKSIDE COMMERCIAL MGMT RENT JUN",
+    "Amount (USD)": -8200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0131",
+    "Transaction Date": "2026-06-02T00:00:00",
+    "Posted Date": "2026-06-02T00:00:00",
+    "Description": "CHECK DEP SUMMIT LEARNING CENTER SERVICE 6200",
+    "Amount (USD)": 3425.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0144",
+    "Transaction Date": "2026-06-03T00:00:00",
+    "Posted Date": "2026-06-04T00:00:00",
+    "Description": "ZELLE FROM OAK & STONE REALTY REPAIR 6213",
+    "Amount (USD)": 3450.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0158",
+    "Transaction Date": "2026-06-03T00:00:00",
+    "Posted Date": "2026-06-04T00:00:00",
+    "Description": "FERGUSON.COM REF 601",
+    "Amount (USD)": -1450.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0132",
+    "Transaction Date": "2026-06-04T00:00:00",
+    "Posted Date": "2026-06-05T00:00:00",
+    "Description": "ZELLE FROM METRO SELF STORAGE REPAIR 6201",
+    "Amount (USD)": 2000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0149",
+    "Transaction Date": "2026-06-04T00:00:00",
+    "Posted Date": "2026-06-05T00:00:00",
+    "Description": "WIRE CEDAR GROVE MARKET EQUIPMENT INSTALL 6500",
+    "Amount (USD)": 8100.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0145",
+    "Transaction Date": "2026-06-05T00:00:00",
+    "Posted Date": "2026-06-05T00:00:00",
+    "Description": "ACH CREDIT RIVERSIDE PEDIATRICS INV 6114",
+    "Amount (USD)": 1700.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0155",
+    "Transaction Date": "2026-06-05T00:00:00",
+    "Posted Date": "2026-06-05T00:00:00",
+    "Description": "ACH CREDIT BLUEBIRD PROPERTY MANAGEMENT MAINT PLAN JUN",
+    "Amount (USD)": 900.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0133",
+    "Transaction Date": "2026-06-06T00:00:00",
+    "Posted Date": "2026-06-06T00:00:00",
+    "Description": "ACH CREDIT PARKVIEW SENIOR LIVING INV 6102",
+    "Amount (USD)": 3225.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0159",
+    "Transaction Date": "2026-06-06T00:00:00",
+    "Posted Date": "2026-06-07T00:00:00",
+    "Description": "WW GRAINGER 877-202-2594 REF 602",
+    "Amount (USD)": -2675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0174",
+    "Transaction Date": "2026-06-06T00:00:00",
+    "Posted Date": "2026-06-07T00:00:00",
+    "Description": "SHELL OIL 574221",
+    "Amount (USD)": -285.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0146",
+    "Transaction Date": "2026-06-07T00:00:00",
+    "Posted Date": "2026-06-08T00:00:00",
+    "Description": "MOBILE DEPOSIT SUMMIT LEARNING CENTER JOB 6215",
+    "Amount (USD)": 1450.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0166",
+    "Transaction Date": "2026-06-07T00:00:00",
+    "Posted Date": "2026-06-08T00:00:00",
+    "Description": "ACH NORTHLINE HVAC JUN-01",
+    "Amount (USD)": -2950.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0134",
+    "Transaction Date": "2026-06-08T00:00:00",
+    "Posted Date": "2026-06-09T00:00:00",
+    "Description": "MOBILE DEPOSIT CEDAR GROVE MARKET JOB 6203",
+    "Amount (USD)": 1975.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0150",
+    "Transaction Date": "2026-06-08T00:00:00",
+    "Posted Date": "2026-06-08T00:00:00",
+    "Description": "ACH CREDIT HUDSON VETERINARY CLINIC INSTALL 6501",
+    "Amount (USD)": 10800.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0178",
+    "Transaction Date": "2026-06-08T00:00:00",
+    "Posted Date": "2026-06-08T00:00:00",
+    "Description": "INTUIT *QUICKBOOKS ONLINE",
+    "Amount (USD)": -150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0147",
+    "Transaction Date": "2026-06-09T00:00:00",
+    "Posted Date": "2026-06-09T00:00:00",
+    "Description": "CHECK DEP METRO SELF STORAGE SERVICE 6216",
+    "Amount (USD)": 3500.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0160",
+    "Transaction Date": "2026-06-09T00:00:00",
+    "Posted Date": "2026-06-10T00:00:00",
+    "Description": "SUPPLYHOUSE.COM REF 603",
+    "Amount (USD)": -2675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0183",
+    "Transaction Date": "2026-06-09T00:00:00",
+    "Posted Date": "2026-06-09T00:00:00",
+    "Description": "HISCOX BUSINESS INSURANCE JUN",
+    "Amount (USD)": -1225.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0135",
+    "Transaction Date": "2026-06-10T00:00:00",
+    "Posted Date": "2026-06-10T00:00:00",
+    "Description": "CHECK DEP HUDSON VETERINARY CLINIC SERVICE 6204",
+    "Amount (USD)": 1675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0191",
+    "Transaction Date": "2026-06-10T00:00:00",
+    "Posted Date": "2026-06-10T00:00:00",
+    "Description": "ONLINE TRANSFER TO TAX RESERVE TAX RESERVE TRANSFER JUN-1",
+    "Amount (USD)": -7000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "tax_reserve_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0192",
+    "Transaction Date": "2026-06-10T00:00:00",
+    "Posted Date": "2026-06-10T00:00:00",
+    "Description": "ONLINE TRANSFER FROM OPERATING TAX RESERVE TRANSFER JUN-1",
+    "Amount (USD)": 7000.0,
+    "Currency": "USD",
+    "Bank Account": "Tax Reserve"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0148",
+    "Transaction Date": "2026-06-11T00:00:00",
+    "Posted Date": "2026-06-12T00:00:00",
+    "Description": "ZELLE FROM PARKVIEW SENIOR LIVING REPAIR 6217",
+    "Amount (USD)": 2525.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0181",
+    "Transaction Date": "2026-06-11T00:00:00",
+    "Posted Date": "2026-06-12T00:00:00",
+    "Description": "GOOGLE ADS 5412",
+    "Amount (USD)": -2050.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0136",
+    "Transaction Date": "2026-06-12T00:00:00",
+    "Posted Date": "2026-06-13T00:00:00",
+    "Description": "ZELLE FROM EASTSIDE COMMUNITY CENTER REPAIR 6205",
+    "Amount (USD)": 1475.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06_10_to_2026_07_10.csv",
+    "Bank Transaction ID": "BF-202606-0136",
+    "Transaction Date": "2026-06-12T00:00:00",
+    "Posted Date": "2026-06-13T00:00:00",
+    "Description": "ZELLE FROM EASTSIDE COMMUNITY CENTER REPAIR 6205",
+    "Amount (USD)": 1475.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0151",
+    "Transaction Date": "2026-06-12T00:00:00",
+    "Posted Date": "2026-06-13T00:00:00",
+    "Description": "CHECK DEPOSIT EASTSIDE COMMUNITY CENTER PROJECT 6502",
+    "Amount (USD)": 8950.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0161",
+    "Transaction Date": "2026-06-12T00:00:00",
+    "Posted Date": "2026-06-13T00:00:00",
+    "Description": "CES #NYC-14 REF 604",
+    "Amount (USD)": -2675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0167",
+    "Transaction Date": "2026-06-12T00:00:00",
+    "Posted Date": "2026-06-13T00:00:00",
+    "Description": "PRECISION INSTALL SVCS JUN-02",
+    "Amount (USD)": -2400.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0175",
+    "Transaction Date": "2026-06-12T00:00:00",
+    "Posted Date": "2026-06-13T00:00:00",
+    "Description": "BP#98231 NEW YORK",
+    "Amount (USD)": -285.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0184",
+    "Transaction Date": "2026-06-12T00:00:00",
+    "Posted Date": "2026-06-13T00:00:00",
+    "Description": "CON EDISON AUTOPAY",
+    "Amount (USD)": -870.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0137",
+    "Transaction Date": "2026-06-14T00:00:00",
+    "Posted Date": "2026-06-14T00:00:00",
+    "Description": "ACH CREDIT BEACON OFFICE SUITES INV 6106",
+    "Amount (USD)": 3200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0156",
+    "Transaction Date": "2026-06-14T00:00:00",
+    "Posted Date": "2026-06-14T00:00:00",
+    "Description": "AUTO PAY NORTHSTAR DENTAL GROUP SERVICE PLAN JUN",
+    "Amount (USD)": 1250.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0162",
+    "Transaction Date": "2026-06-15T00:00:00",
+    "Posted Date": "2026-06-16T00:00:00",
+    "Description": "ABC PLUMBING SUPPLY REF 605",
+    "Amount (USD)": -2675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0171",
+    "Transaction Date": "2026-06-15T00:00:00",
+    "Posted Date": "2026-06-15T00:00:00",
+    "Description": "ADP PAYROLL JUN FIRST HALF",
+    "Amount (USD)": -13550.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06_10_to_2026_07_10.csv",
+    "Bank Transaction ID": "BF-202606-0171",
+    "Transaction Date": "2026-06-15T00:00:00",
+    "Posted Date": "2026-06-15T00:00:00",
+    "Description": "ADP PAYROLL JUN FIRST HALF",
+    "Amount (USD)": -13550.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0179",
+    "Transaction Date": "2026-06-15T00:00:00",
+    "Posted Date": "2026-06-15T00:00:00",
+    "Description": "GOOGLE WORKSPACE BRIGHTFIX",
+    "Amount (USD)": -420.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0138",
+    "Transaction Date": "2026-06-16T00:00:00",
+    "Posted Date": "2026-06-17T00:00:00",
+    "Description": "MOBILE DEPOSIT LIBERTY DAY SCHOOL JOB 6207",
+    "Amount (USD)": 1925.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0152",
+    "Transaction Date": "2026-06-16T00:00:00",
+    "Posted Date": "2026-06-16T00:00:00",
+    "Description": "WIRE BEACON OFFICE SUITES EQUIPMENT INSTALL 6503",
+    "Amount (USD)": 8100.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0168",
+    "Transaction Date": "2026-06-17T00:00:00",
+    "Posted Date": "2026-06-18T00:00:00",
+    "Description": "ACH METRO HANDYMAN JUN-03",
+    "Amount (USD)": -1850.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0139",
+    "Transaction Date": "2026-06-18T00:00:00",
+    "Posted Date": "2026-06-18T00:00:00",
+    "Description": "CHECK DEP WEST END PHARMACY SERVICE 6208",
+    "Amount (USD)": 1450.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0163",
+    "Transaction Date": "2026-06-18T00:00:00",
+    "Posted Date": "2026-06-19T00:00:00",
+    "Description": "HOMEDEPOT.COM 800-430-3376 REF 606",
+    "Amount (USD)": -1450.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0176",
+    "Transaction Date": "2026-06-18T00:00:00",
+    "Posted Date": "2026-06-19T00:00:00",
+    "Description": "EXXONMOBIL 48122",
+    "Amount (USD)": -340.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0186",
+    "Transaction Date": "2026-06-18T00:00:00",
+    "Posted Date": "2026-06-19T00:00:00",
+    "Description": "ACH CLEARLEDGER CPA MONTHLY JUN",
+    "Amount (USD)": -1650.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0140",
+    "Transaction Date": "2026-06-20T00:00:00",
+    "Posted Date": "2026-06-21T00:00:00",
+    "Description": "ZELLE FROM BLUEBIRD PROPERTY MANAGEMENT REPAIR 6209",
+    "Amount (USD)": 3225.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0153",
+    "Transaction Date": "2026-06-20T00:00:00",
+    "Posted Date": "2026-06-21T00:00:00",
+    "Description": "ACH CREDIT LIBERTY DAY SCHOOL INSTALL 6504",
+    "Amount (USD)": 7250.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0188",
+    "Transaction Date": "2026-06-20T00:00:00",
+    "Posted Date": "2026-06-21T00:00:00",
+    "Description": "STAPLES 001422 OFFICE SUPPLIES",
+    "Amount (USD)": -310.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0164",
+    "Transaction Date": "2026-06-21T00:00:00",
+    "Posted Date": "2026-06-22T00:00:00",
+    "Description": "LOWE'S HOME IMPROVEMENT REF 607",
+    "Amount (USD)": -2200.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0182",
+    "Transaction Date": "2026-06-21T00:00:00",
+    "Posted Date": "2026-06-22T00:00:00",
+    "Description": "YELP ADVERTISING",
+    "Amount (USD)": -1050.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0141",
+    "Transaction Date": "2026-06-22T00:00:00",
+    "Posted Date": "2026-06-22T00:00:00",
+    "Description": "ACH CREDIT NORTHSTAR DENTAL GROUP INV 6110",
+    "Amount (USD)": 2850.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0169",
+    "Transaction Date": "2026-06-22T00:00:00",
+    "Posted Date": "2026-06-23T00:00:00",
+    "Description": "APEX ELEC LLC INV JUN-04",
+    "Amount (USD)": -1850.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0180",
+    "Transaction Date": "2026-06-22T00:00:00",
+    "Posted Date": "2026-06-22T00:00:00",
+    "Description": "SERVICETITAN SUBSCRIPTION",
+    "Amount (USD)": -875.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0185",
+    "Transaction Date": "2026-06-22T00:00:00",
+    "Posted Date": "2026-06-23T00:00:00",
+    "Description": "VERIZON BUSINESS AUTOPAY",
+    "Amount (USD)": -390.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0157",
+    "Transaction Date": "2026-06-23T00:00:00",
+    "Posted Date": "2026-06-23T00:00:00",
+    "Description": "ACH CREDIT HARBORVIEW APARTMENTS MAINT PLAN JUN",
+    "Amount (USD)": 1500.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0189",
+    "Transaction Date": "2026-06-23T00:00:00",
+    "Posted Date": "2026-06-24T00:00:00",
+    "Description": "FLEET AUTO CARE SERVICE VAN 2",
+    "Amount (USD)": -915.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0142",
+    "Transaction Date": "2026-06-24T00:00:00",
+    "Posted Date": "2026-06-25T00:00:00",
+    "Description": "MOBILE DEPOSIT HARBORVIEW APARTMENTS JOB 6211",
+    "Amount (USD)": 2550.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0154",
+    "Transaction Date": "2026-06-24T00:00:00",
+    "Posted Date": "2026-06-24T00:00:00",
+    "Description": "CHECK DEPOSIT WEST END PHARMACY PROJECT 6505",
+    "Amount (USD)": 7250.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0165",
+    "Transaction Date": "2026-06-24T00:00:00",
+    "Posted Date": "2026-06-25T00:00:00",
+    "Description": "FERGUSON ENT #204 REF 608",
+    "Amount (USD)": -2675.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0177",
+    "Transaction Date": "2026-06-24T00:00:00",
+    "Posted Date": "2026-06-25T00:00:00",
+    "Description": "SPEEDWAY 07119",
+    "Amount (USD)": -395.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0193",
+    "Transaction Date": "2026-06-25T00:00:00",
+    "Posted Date": "2026-06-25T00:00:00",
+    "Description": "ONLINE TRANSFER TO TAX RESERVE TAX RESERVE TRANSFER JUN-2",
+    "Amount (USD)": -9000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "tax_reserve_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0194",
+    "Transaction Date": "2026-06-25T00:00:00",
+    "Posted Date": "2026-06-25T00:00:00",
+    "Description": "ONLINE TRANSFER FROM OPERATING TAX RESERVE TRANSFER JUN-2",
+    "Amount (USD)": 9000.0,
+    "Currency": "USD",
+    "Bank Account": "Tax Reserve"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0143",
+    "Transaction Date": "2026-06-26T00:00:00",
+    "Posted Date": "2026-06-26T00:00:00",
+    "Description": "CHECK DEP GREENLINE FITNESS SERVICE 6212",
+    "Amount (USD)": 1925.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0190",
+    "Transaction Date": "2026-06-26T00:00:00",
+    "Posted Date": "2026-06-26T00:00:00",
+    "Description": "ACH REFUND TO BEACON OFFICE SUITES JOB 6802",
+    "Amount (USD)": -2100.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0170",
+    "Transaction Date": "2026-06-27T00:00:00",
+    "Posted Date": "2026-06-28T00:00:00",
+    "Description": "ACH RIVERA PLUMBING JUN-05",
+    "Amount (USD)": -2950.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0195",
+    "Transaction Date": "2026-06-27T00:00:00",
+    "Posted Date": "2026-06-27T00:00:00",
+    "Description": "OWNER DISTRIBUTION MAYA PATEL",
+    "Amount (USD)": -5000.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0187",
+    "Transaction Date": "2026-06-28T00:00:00",
+    "Posted Date": "2026-06-28T00:00:00",
+    "Description": "MONTHLY SERVICE FEE",
+    "Amount (USD)": -35.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  },
+  {
+    "Source File": "operating_checking_2026_06.csv",
+    "Bank Transaction ID": "BF-202606-0172",
+    "Transaction Date": "2026-06-29T00:00:00",
+    "Posted Date": "2026-06-29T00:00:00",
+    "Description": "ADP PAYROLL JUN SECOND HALF",
+    "Amount (USD)": -14150.0,
+    "Currency": "USD",
+    "Bank Account": "Operating Checking"
+  }
+]

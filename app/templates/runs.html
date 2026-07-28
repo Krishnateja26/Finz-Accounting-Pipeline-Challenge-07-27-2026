@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Runs &middot; Finz Accounting Pipeline{% endblock %}
+{% block content %}
+<div class="finz-eyebrow">History</div>
+<h1 class="finz-page-title">Runs</h1>
+<p class="finz-page-sub mb-4">Every reconciliation run and QuickBooks sync attempt, with its output.</p>
+
+<div class="row g-3">
+  <div class="col-lg-6">
+    <div class="finz-card">
+      <h5 class="mb-3">Reconciliation runs</h5>
+      <div id="reconRuns"><div class="finz-empty">Loading&hellip;</div></div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="finz-card">
+      <h5 class="mb-3">QuickBooks sync log</h5>
+      <div id="syncLog"><div class="finz-empty">Loading&hellip;</div></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+function fmt(cents) { return (cents / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+
+async function load() {
+  const resp = await fetch('/api/dashboard/runs');
+  const data = await resp.json();
+
+  const runs = data.reconciliation_runs;
+  document.getElementById('reconRuns').innerHTML = runs.length ? runs.map(r => {
+    const total = r.lines.length;
+    const reconciled = r.lines.filter(l => l.is_reconciled).length;
+    return `
+      <div class="finz-card-tight mb-2" style="background:var(--finz-surface-2); border-radius:var(--finz-radius-md);">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <strong>${r.period_label}</strong>
+            <div class="finz-page-sub" style="font-size:0.78rem;">${FinzFormat.dateTime(r.run_at)}</div>
+          </div>
+          <span class="badge ${r.fully_reconciled ? 'bg-success' : 'bg-danger'}">
+            ${r.fully_reconciled ? 'Reconciled' : `${reconciled}/${total} lines match`}
+          </span>
+        </div>
+      </div>`;
+  }).join('') : '<div class="finz-empty">No reconciliation runs yet. Run one from the Reconciliation page.</div>';
+
+  const log = data.sync_log;
+  const syncSummary = data.sync_summary || {};
+  const byType = syncSummary.by_qbo_type || {};
+  const typeText = Object.keys(byType).sort().map(k => `${k}: ${byType[k]}`).join(' | ');
+  document.getElementById('syncLog').innerHTML = log.length ? `
+    <div class="finz-card-tight mb-3" style="background:var(--finz-surface-2); border-radius:var(--finz-radius-md);">
+      <strong>${syncSummary.success ?? log.length} successful QBO posts</strong>
+      <div class="finz-page-sub" style="font-size:0.82rem;">
+        Showing latest ${syncSummary.shown ?? log.length} of ${syncSummary.total ?? log.length}
+        ${typeText ? `&nbsp;|&nbsp; ${typeText}` : ''}
+      </div>
+    </div>
+    <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>When</th><th>Transaction</th><th>QBO type</th><th>Status</th></tr></thead>
+      <tbody>
+        ${log.map(e => `
+          <tr>
+            <td class="finz-page-sub" style="font-size:0.8rem;">${FinzFormat.dateTime(e.synced_at)}</td>
+            <td class="mono" style="font-size:0.78rem;">${(e.transaction_id || '').slice(0, 12)}&hellip;</td>
+            <td>${e.qbo_entity_type || '-'}</td>
+            <td><span class="badge ${e.status === 'success' ? 'bg-success' : 'bg-danger'}">${e.status}</span></td>
+          </tr>`).join('')}
+      </tbody>
+    </table>
+    </div>` : '<div class="finz-empty">No sync attempts yet. Sync from the Reconciliation page.</div>';
+}
+
+load();
+</script>
+{% endblock %}

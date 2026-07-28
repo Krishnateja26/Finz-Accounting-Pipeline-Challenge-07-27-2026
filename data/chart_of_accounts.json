@@ -1,0 +1,191 @@
+[
+  {
+    "Account No.": "1000",
+    "Account Name": "Operating Checking",
+    "QBO Account Type": "Bank",
+    "Suggested Detail Type": "Checking",
+    "Statement": "Balance Sheet",
+    "Purpose": "Primary bank account used for operating receipts and payments",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "1010",
+    "Account Name": "Tax Reserve",
+    "QBO Account Type": "Bank",
+    "Suggested Detail Type": "Savings",
+    "Statement": "Balance Sheet",
+    "Purpose": "Reserve account used only for internal transfers",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "1500",
+    "Account Name": "Tools & Equipment",
+    "QBO Account Type": "Fixed Assets",
+    "Suggested Detail Type": "Machinery and Equipment",
+    "Statement": "Balance Sheet",
+    "Purpose": "Commercial equipment and tool purchases",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "3000",
+    "Account Name": "Owner's Equity",
+    "QBO Account Type": "Equity",
+    "Suggested Detail Type": "Owner's Equity",
+    "Statement": "Balance Sheet",
+    "Purpose": "Owner contributions and distributions",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "4000",
+    "Account Name": "Repair Service Revenue",
+    "QBO Account Type": "Income",
+    "Suggested Detail Type": "Service/Fee Income",
+    "Statement": "Profit and Loss",
+    "Purpose": "Repair and maintenance jobs",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "4010",
+    "Account Name": "Installation Revenue",
+    "QBO Account Type": "Income",
+    "Suggested Detail Type": "Service/Fee Income",
+    "Statement": "Profit and Loss",
+    "Purpose": "Installation projects",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "4020",
+    "Account Name": "Maintenance Plan Revenue",
+    "QBO Account Type": "Income",
+    "Suggested Detail Type": "Service/Fee Income",
+    "Statement": "Profit and Loss",
+    "Purpose": "Recurring maintenance-plan receipts",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "4100",
+    "Account Name": "Customer Refunds",
+    "QBO Account Type": "Income",
+    "Suggested Detail Type": "Discounts/Refunds Given",
+    "Statement": "Profit and Loss",
+    "Purpose": "Contra-revenue account for customer refunds",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "5000",
+    "Account Name": "Materials & Supplies",
+    "QBO Account Type": "Cost of Goods Sold",
+    "Suggested Detail Type": "Supplies & Materials - COGS",
+    "Statement": "Profit and Loss",
+    "Purpose": "Materials consumed on customer jobs",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "5010",
+    "Account Name": "Subcontractor Costs",
+    "QBO Account Type": "Cost of Goods Sold",
+    "Suggested Detail Type": "Cost of Labor",
+    "Statement": "Profit and Loss",
+    "Purpose": "Third-party labor used on customer jobs",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6000",
+    "Account Name": "Payroll Expense",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Payroll Expenses",
+    "Statement": "Profit and Loss",
+    "Purpose": "Employee payroll payments",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6010",
+    "Account Name": "Rent Expense",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Rent or Lease of Buildings",
+    "Statement": "Profit and Loss",
+    "Purpose": "Office and workshop rent",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6020",
+    "Account Name": "Vehicle & Fuel",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Auto",
+    "Statement": "Profit and Loss",
+    "Purpose": "Fuel and vehicle operating costs",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6030",
+    "Account Name": "Software & Subscriptions",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Dues & Subscriptions",
+    "Statement": "Profit and Loss",
+    "Purpose": "Software and online subscriptions",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6040",
+    "Account Name": "Marketing & Advertising",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Advertising/Promotional",
+    "Statement": "Profit and Loss",
+    "Purpose": "Paid advertising and lead-generation services",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6050",
+    "Account Name": "Insurance Expense",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Insurance",
+    "Statement": "Profit and Loss",
+    "Purpose": "Business insurance",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6060",
+    "Account Name": "Utilities",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Utilities",
+    "Statement": "Profit and Loss",
+    "Purpose": "Electricity, internet, and phone",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6070",
+    "Account Name": "Professional Fees",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Legal & Professional Fees",
+    "Statement": "Profit and Loss",
+    "Purpose": "Accounting and professional services",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6080",
+    "Account Name": "Bank Fees",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Bank Charges",
+    "Statement": "Profit and Loss",
+    "Purpose": "Bank service charges",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6090",
+    "Account Name": "Office & General",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Office/General Administrative Expenses",
+    "Statement": "Profit and Loss",
+    "Purpose": "Office supplies and general administrative costs",
+    "Active": "Yes"
+  },
+  {
+    "Account No.": "6100",
+    "Account Name": "Repairs & Maintenance",
+    "QBO Account Type": "Expenses",
+    "Suggested Detail Type": "Repair & Maintenance",
+    "Statement": "Profit and Loss",
+    "Purpose": "Repairs to business vehicles and equipment",
+    "Active": "Yes"
+  }
+]

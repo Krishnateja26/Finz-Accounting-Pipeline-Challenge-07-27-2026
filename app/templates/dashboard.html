@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block title %}Dashboard &middot; Finz Accounting Pipeline{% endblock %}
+{% block content %}
+<div class="dashboard-page">
+<div class="finz-eyebrow">Overview</div>
+<h1 class="finz-page-title">{{ company_name }}</h1>
+<p class="finz-page-sub mb-4">Cash-basis accounting pipeline &mdash; ingestion through QuickBooks reconciliation.</p>
+
+<div id="statsGrid" class="row g-3 mb-4"></div>
+
+<div class="row g-3">
+  <div class="col-lg-7">
+    <div class="finz-card h-100">
+      <h5 class="mb-3">P&amp;L by category <span class="finz-page-sub" style="font-size:0.8rem;">(approved, 3-month)</span></h5>
+      <div id="categoryBars"><div class="finz-empty">No approved transactions yet.</div></div>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="finz-card h-100">
+      <h5 class="mb-3">Net profit (3-month)</h5>
+      <div id="pnlMini"></div>
+      <hr style="border:0; border-top:2px solid var(--finz-border); margin:0.5rem 0 0.35rem;">
+      <h6 class="finz-page-sub mb-2" style="font-size:0.78rem; text-transform:uppercase; letter-spacing:.06em;">Reconciliation</h6>
+      <div id="reconMini"></div>
+      <a href="/reconciliation" class="btn btn-sm btn-outline-primary mt-3 w-100">Go to reconciliation &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3 mt-1">
+  <div class="col-lg-7">
+    <div class="finz-card">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mb-0">Recent uploads</h5>
+        <a href="/upload" class="btn btn-sm btn-outline-primary">Upload new file</a>
+      </div>
+      <div id="recentBatches"><div class="finz-empty">No uploads yet.</div></div>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="finz-card">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mb-0">Needs your attention</h5>
+        <a href="/transactions" class="btn btn-sm btn-outline-primary">Review &rarr;</a>
+      </div>
+      <div id="attentionList"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3 mt-1">
+  <div class="col-lg-4">
+    <div class="finz-card h-100">
+      <div class="finz-eyebrow">About</div>
+      <h5 class="mt-2">What This Application Does</h5>
+      <p class="finz-page-sub mb-0">This is an accounting data engineering pipeline for the Finz challenge. It turns messy bank exports into reviewed, classified, duplicate-safe accounting transactions, then ties the app output back to QuickBooks Sandbox.</p>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="finz-card h-100">
+      <div class="finz-eyebrow">Features</div>
+      <h5 class="mt-2">Pipeline Capabilities</h5>
+      <ul class="finz-feature-list mb-0">
+        <li>CSV/XLSX upload with worksheet selection and column mapping</li>
+        <li>Normalization, duplicate detection, classification, and manual review</li>
+        <li>Cash-basis P&amp;L with account-level drill-down</li>
+        <li>QuickBooks chart setup, sync, run history, and reconciliation</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="finz-card h-100">
+      <div class="finz-eyebrow">Review Logic</div>
+      <h5 class="mt-2">P&amp;L and Confidence Scores</h5>
+      <p class="finz-page-sub mb-0">The P&amp;L is computed only from approved canonical transactions. Confidence scores explain classification certainty: high-confidence rows can be approved quickly, while lower-confidence rows stay visible for human review before QBO sync.</p>
+    </div>
+  </div>
+</div>
+
+<div class="finz-card mt-3">
+  <div class="finz-eyebrow">Contact</div>
+  <h5 class="mt-2">Questions About This Challenge Build?</h5>
+  <p class="finz-page-sub mb-3">This application is completely built for the Finz Accounting Pipeline Challenge. For questions, feedback, or walkthrough details, contact Krishna Teja through email, LinkedIn, GitHub, or Portfolio.</p>
+  <div class="finz-contact-card">
+    <a href="mailto:ksuram1@umbc.edu">ksuram1@umbc.edu</a>
+    <a href="https://www.linkedin.com/in/krishna-teja-reddy-s-93b210231/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+    <a href="https://github.com/Krishnateja26?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub repositories</a>
+    <a href="https://krishnateja26.github.io/KrishnaTeja_Portfolio-/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+  </div>
+</div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+function fmt(cents) { return (cents / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+
+function statCard(label, value, sub, accent) {
+  return `<div class="col-6 col-lg-3">
+    <div class="finz-stat ${accent ? 'finz-stat-accent' : ''}">
+      <div class="finz-stat-label">${label}</div>
+      <div class="finz-stat-value">${value}</div>
+      ${sub ? `<div class="finz-stat-sub">${sub}</div>` : ''}
+    </div>
+  </div>`;
+}
+
+async function load() {
+  const resp = await fetch('/api/dashboard/summary');
+  const data = await resp.json();
+  const c = data.counts;
+
+  document.getElementById('statsGrid').innerHTML = [
+    statCard('Raw rows ingested', c.raw_rows, `${c.canonical_transactions} unique &middot; ${c.duplicates} duplicates`),
+    statCard('Needs review', c.needs_review, c.needs_review > 0 ? 'Waiting on a reviewer' : 'All caught up', c.needs_review > 0),
+    statCard('Approved', c.approved, 'Ready to sync'),
+    statCard('Synced to QuickBooks', c.synced, c.sync_failed ? `${c.sync_failed} failed` : `${c.not_synced} canonical pending · ${c.duplicates_excluded_from_sync} duplicates excluded`),
+  ].join('');
+
+  const cats = data.categories.slice().sort((a, b) => Math.abs(b.amount_cents) - Math.abs(a.amount_cents));
+  document.getElementById('categoryBars').innerHTML = cats.length ? cats.map(cat => `
+    <div class="finz-cat-row">
+      <div class="finz-cat-name" title="${cat.account_name}">${cat.account_name}</div>
+      <div class="finz-cat-track"><div class="finz-cat-fill ${cat.amount_cents < 0 ? 'negative' : ''}" style="width:${cat.bar_pct}%"></div></div>
+      <div class="finz-cat-amount">${fmt(cat.amount_cents)}</div>
+    </div>`).join('') : '<div class="finz-empty">No approved transactions yet.</div>';
+
+  const p = data.pnl_summary;
+  document.getElementById('pnlMini').innerHTML = `
+    <div class="d-flex justify-content-between mb-1"><span class="finz-page-sub">Revenue</span><span>${fmt(p.revenue_cents)}</span></div>
+    <div class="d-flex justify-content-between mb-1"><span class="finz-page-sub">COGS</span><span>${fmt(-p.cogs_cents)}</span></div>
+    <div class="d-flex justify-content-between mb-1"><span class="finz-page-sub">Gross profit</span><span>${fmt(p.gross_profit_cents)}</span></div>
+    <div class="d-flex justify-content-between mb-1"><span class="finz-page-sub">Operating expenses</span><span>${fmt(-p.opex_cents)}</span></div>
+    <div class="d-flex justify-content-between fw-bold pt-2 mt-1" style="border-top:2px solid var(--finz-border); border-bottom:2px solid var(--finz-border); padding-bottom:0.75rem;">
+      <span>Net profit</span><span class="finz-stat-accent" style="color:var(--finz-accent)">${fmt(p.net_profit_cents)}</span>
+    </div>`;
+
+  const recon = data.reconciliation;
+  document.getElementById('reconMini').innerHTML = recon.latest
+    ? `<div class="d-flex justify-content-between align-items-center">
+         <span class="finz-page-sub">${recon.total_runs} run${recon.total_runs === 1 ? '' : 's'} total</span>
+         <span class="badge ${recon.latest.fully_reconciled ? 'bg-success' : 'bg-danger'}">
+           ${recon.latest.fully_reconciled ? 'Latest: Reconciled' : 'Latest: Differences found'}
+         </span>
+       </div>`
+    : '<div class="finz-empty">No reconciliation runs yet.</div>';
+
+  document.getElementById('recentBatches').innerHTML = data.recent_batches.length
+    ? `<table class="table table-sm"><thead><tr><th>File</th><th>Rows</th><th>Uploaded</th></tr></thead><tbody>
+        ${data.recent_batches.map(b => `<tr><td>${b.source_file}</td><td>${b.row_count}</td>
+          <td class="finz-page-sub">${FinzFormat.dateTime(b.created_at)}</td></tr>`).join('')}
+       </tbody></table>`
+    : '<div class="finz-empty">No uploads yet.</div>';
+
+  document.getElementById('attentionList').innerHTML = `
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <span>Unclassified / needs review</span><span class="badge bg-secondary">${c.needs_review}</span>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <span>Processing errors</span><span class="badge bg-secondary">${c.processing_errors}</span>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <span>Sync failures</span><span class="badge bg-secondary">${c.sync_failed}</span>
+    </div>`;
+}
+
+load();
+</script>
+{% endblock %}

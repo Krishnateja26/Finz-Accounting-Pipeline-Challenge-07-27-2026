@@ -1,0 +1,152 @@
+[
+  {
+    "section": "Section",
+    "setting": "Setting",
+    "value": "Value / Guidance"
+  },
+  {
+    "section": "Company",
+    "setting": "Company name",
+    "value": "BrightFix Home Services LLC"
+  },
+  {
+    "section": "Company",
+    "setting": "Industry",
+    "value": "Residential and commercial repair, maintenance, and installation services"
+  },
+  {
+    "section": "Company",
+    "setting": "Legal structure",
+    "value": "Limited Liability Company (LLC)"
+  },
+  {
+    "section": "Company",
+    "setting": "Country and currency",
+    "value": "United States, USD"
+  },
+  {
+    "section": "Company",
+    "setting": "Fiscal year",
+    "value": "January 1 to December 31"
+  },
+  {
+    "section": "Company",
+    "setting": "Accounting basis",
+    "value": "Cash basis"
+  },
+  {
+    "section": "Company",
+    "setting": "Dataset period",
+    "value": "April 1, 2026 to June 30, 2026"
+  },
+  {
+    "section": "Company",
+    "setting": "QBO environment",
+    "value": "Create and use a QuickBooks Online developer sandbox company"
+  },
+  {
+    "section": "Company",
+    "setting": "Bank accounts",
+    "value": "Operating Checking and Tax Reserve"
+  },
+  {
+    "section": "Company",
+    "setting": "Opening balances",
+    "value": "Use $0 opening balances for this challenge"
+  },
+  {
+    "section": "Scope",
+    "setting": "Included",
+    "value": "Bank transactions, normalization, classification, P&L generation, QBO sync, and P&L reconciliation"
+  },
+  {
+    "section": "Scope",
+    "setting": "Out of scope",
+    "value": "Sales tax, inventory, accounts receivable, accounts payable, depreciation, and payroll liabilities"
+  },
+  {
+    "section": "Scope",
+    "setting": "Raw data sign",
+    "value": "Positive amounts are money received. Negative amounts are money paid."
+  },
+  {
+    "section": "Scope",
+    "setting": "Raw data quality",
+    "value": "Treat the bank data as untrusted. It may contain inconsistent descriptions, duplicates, transfers, and non-P&L transactions."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Customer receipts",
+    "value": "Customer payments for completed repair and installation work are revenue."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Maintenance plans",
+    "value": "Monthly maintenance-plan receipts are revenue when received."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Direct costs",
+    "value": "Materials and subcontractor payments are Cost of Goods Sold."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Operating expenses",
+    "value": "Payroll, rent, fuel, software, marketing, insurance, utilities, professional fees, bank fees, office costs, and repairs are operating expenses."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Customer refunds",
+    "value": "Refunds reduce revenue and should appear as negative revenue."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Owner activity",
+    "value": "Owner contributions and owner distributions affect equity, not the P&L."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Equipment",
+    "value": "The commercial tool package is a fixed asset and should not appear on the P&L."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Transfers",
+    "value": "Transfers between Operating Checking and Tax Reserve are not revenue or expense."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Duplicates",
+    "value": "The same bank transaction must be processed only once, even if it appears in overlapping source files."
+  },
+  {
+    "section": "Accounting Rules",
+    "setting": "Recognition date",
+    "value": "Use the bank transaction date for cash-basis reporting."
+  },
+  {
+    "section": "Candidate Output",
+    "setting": "Internal P&L",
+    "value": "Generate April, May, June, and three-month Profit and Loss statements from the classified data."
+  },
+  {
+    "section": "Candidate Output",
+    "setting": "QBO sync",
+    "value": "Sync the correctly classified transactions into the QBO sandbox without duplicate posting."
+  },
+  {
+    "section": "Candidate Output",
+    "setting": "Reconciliation",
+    "value": "Pull the QBO cash-basis P&L and reconcile every account and net profit to the internally generated P&L."
+  },
+  {
+    "section": "Reference",
+    "setting": "QBO chart of accounts",
+    "value": "https://quickbooks.intuit.com/learn-support/en-us/help-article/chart-accounts/learn-account-detail-types-chart-accounts/L2gCy0rfy_US_en_US"
+  },
+  {
+    "section": "Reference",
+    "setting": "QBO developer documentation",
+    "value": "https://developer.intuit.com/app/developer/qbo/docs/get-started"
+  }
+]

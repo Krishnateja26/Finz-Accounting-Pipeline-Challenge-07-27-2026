@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% block title %}Reconciliation &middot; Finz Accounting Pipeline{% endblock %}
+{% block content %}
+<h3>QuickBooks sync &amp; reconciliation</h3>
+
+<div id="connectionStatus" class="mb-3"></div>
+
+<div class="d-flex gap-2 mb-4">
+  <a href="/api/quickbooks/connect" id="connectButton" class="btn btn-primary">Connect QuickBooks sandbox</a>
+  <button class="btn btn-primary" onclick="setupChart()">Set up chart of accounts</button>
+  <button class="btn btn-primary" onclick="runSync()">Sync approved transactions</button>
+  <button class="btn btn-primary" onclick="runReconciliation()">Pull QBO P&amp;L &amp; reconcile</button>
+  <button class="btn btn-outline-danger" onclick="resetAppData()">Reset app data</button>
+</div>
+
+<div id="chartStatus" class="mb-4"></div>
+<div id="syncCountsStatus" class="mb-4"></div>
+<div id="syncStatus" class="mb-4"></div>
+<div id="resetStatus" class="mb-4"></div>
+<div id="reconResult"></div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+async function loadQboStatus() {
+  const resp = await fetch('/api/quickbooks/status');
+  const data = await resp.json();
+  const connectedFromUrl = new URLSearchParams(window.location.search).get('connected') === '1';
+  if (data.connected) {
+    document.getElementById('connectionStatus').innerHTML =
+      `<div class="alert qbo-status-box">QuickBooks sandbox connected. Realm ID: <span class="mono">${data.realm_id}</span></div>`;
+    document.getElementById('connectButton').innerText = 'Reconnect QuickBooks sandbox';
+  } else if (connectedFromUrl) {
+    document.getElementById('connectionStatus').innerHTML =
+      '<div class="alert qbo-status-box qbo-muted">Returned from QuickBooks, but no saved connection was found. Reconnect the sandbox.</div>';
+  } else {
+    document.getElementById('connectionStatus').innerHTML =
+      '<div class="alert qbo-status-box qbo-muted">QuickBooks sandbox is not connected yet.</div>';
+  }
+  const syncCounts = data.sync_counts || {};
+  const preferredOrder = ['not_synced', 'synced', 'failed', 'pending'];
+  const syncParts = [
+    ...preferredOrder.filter(status => status in syncCounts),
+    ...Object.keys(syncCounts).filter(status => !preferredOrder.includes(status)).sort(),
+  ]
+    .map(status => `${status}: ${syncCounts[status]}`)
+    .join(' | ');
+  if (syncParts) {
+    document.getElementById('syncCountsStatus').innerHTML =
+      `<div class="alert qbo-status-box qbo-muted">Current QBO sync status: ${syncParts}</div>`;
+  }
+}
+
+async function setupChart() {
+  document.getElementById('chartStatus').innerHTML = '<div class="spinner-border"></div>';
+  const resp = await fetch('/api/quickbooks/setup-chart-of-accounts', { method: 'POST' });
+  const data = await resp.json();
+  document.getElementById('chartStatus').innerHTML = `
+    <div class="alert ${data.failed && data.failed.length ? 'alert-warning' : 'alert-success'}">
+      Created: ${data.created ? data.created.length : 0}
+      &nbsp;|&nbsp; Already existed: ${data.already_exists ? data.already_exists.length : 0}
+      &nbsp;|&nbsp; Failed: ${data.failed ? data.failed.length : 0}
+      ${data.created && data.created.length ? '<details class="mt-2"><summary>Created accounts</summary><pre>' + JSON.stringify(data.created, null, 2) + '</pre></details>' : ''}
+      ${data.failed && data.failed.length ? '<details class="mt-2" open><summary>Failures</summary><pre>' + JSON.stringify(data.failed, null, 2) + '</pre></details>' : ''}
+    </div>`;
+}
+
+async function runSync() {
+  document.getElementById('syncStatus').innerHTML =
+    '<div class="alert alert-info"><span class="spinner-border spinner-border-sm me-2"></span>Sync running. You can leave this page; status is saved below.</div>';
+  const poller = setInterval(loadQboStatus, 3000);
+  let data;
+  try {
+    const resp = await fetch('/api/quickbooks/sync', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({}),
+    });
+    const text = await resp.text();
+    try {
+      data = JSON.parse(text || '{}');
+    } catch (parseErr) {
+      data = {detail: text || String(parseErr)};
+    }
+    if (!resp.ok) {
+      document.getElementById('syncStatus').innerHTML =
+        `<div class="alert alert-danger">Sync request failed: ${data.detail || JSON.stringify(data)}</div>`;
+      return;
+    }
+  } catch (err) {
+    document.getElementById('syncStatus').innerHTML =
+      `<div class="alert alert-warning">Sync request was interrupted: ${err}. Refreshing saved status...</div>`;
+    await loadQboStatus();
+    return;
+  } finally {
+    clearInterval(poller);
+  }
+  document.getElementById('syncStatus').innerHTML = `
+    <div class="alert ${data.failed ? 'alert-warning' : 'alert-success'}">
+      Synced: ${data.synced} &nbsp;|&nbsp; Already synced (skipped): ${data.already_synced_skipped}
+      &nbsp;|&nbsp; Internal transfers skipped: ${data.skipped_non_posting ?? 0}
+      &nbsp;|&nbsp; Failed: ${data.failed}
+      ${data.errors && data.errors.length ? '<pre class="mt-2 mb-0">' + JSON.stringify(data.errors, null, 2) + '</pre>' : ''}
+    </div>`;
+  loadQboStatus();
+}
+
+function fmt(cents) {
+  return (cents / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+}
+
+async function runReconciliation() {
+  document.getElementById('reconResult').innerHTML = '<div class="spinner-border"></div>';
+  const resp = await fetch('/api/reconciliation/run', { method: 'POST' });
+  const data = await resp.json();
+  const periods = Object.keys(data).filter(k => data[k].lines);
+
+  document.getElementById('reconResult').innerHTML = periods.map(label => {
+    const run = data[label];
+    return `
+      <h5 class="mt-4">${label} ${run.fully_reconciled
+        ? '<span class="badge bg-success">Reconciled</span>'
+        : '<span class="badge bg-danger">Differences found</span>'}</h5>
+      <table class="table table-sm table-bordered" style="max-width: 900px;">
+        <thead><tr><th>Account</th><th class="text-end">App</th><th class="text-end">QuickBooks</th><th class="text-end">Difference</th><th>Status</th></tr></thead>
+        <tbody>
+          ${run.lines.map(l => `
+            <tr class="${l.is_reconciled ? '' : 'table-danger'}">
+              <td>${l.account_name}</td>
+              <td class="text-end">${fmt(l.app_amount_cents)}</td>
+              <td class="text-end">${fmt(l.qbo_amount_cents)}</td>
+              <td class="text-end">${fmt(l.difference_cents)}</td>
+              <td>${l.is_reconciled ? 'Reconciled' : (l.explanation ?? 'Mismatch')}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>`;
+  }).join('');
+}
+
+async function resetAppData() {
+  const warning = [
+    'This clears uploaded files, transactions, sync logs, reconciliation runs,',
+    'and the saved QuickBooks connection in this app.',
+    '',
+    'Reset Intuit sandbox first, then run this reset, then reconnect QuickBooks.',
+  ].join('\n');
+  if (!confirm(warning)) return;
+
+  const token = prompt('Enter admin reset token');
+  if (!token) return;
+
+  document.getElementById('resetStatus').innerHTML =
+    '<div class="alert alert-warning"><span class="spinner-border spinner-border-sm me-2"></span>Resetting app data...</div>';
+
+  const resp = await fetch('/api/admin/reset', {
+    method: 'POST',
+    headers: {'X-Admin-Reset-Token': token},
+  });
+  const data = await resp.json();
+  if (!resp.ok) {
+    document.getElementById('resetStatus').innerHTML =
+      `<div class="alert alert-danger">Reset failed: ${data.detail || JSON.stringify(data)}</div>`;
+    return;
+  }
+
+  document.getElementById('resetStatus').innerHTML = `
+    <div class="alert alert-success">
+      App data reset. QuickBooks saved connection removed: ${data.qbo_oauth_deleted ? 'yes' : 'no'}.
+      <details class="mt-2"><summary>Reset details</summary><pre>${JSON.stringify(data, null, 2)}</pre></details>
+    </div>`;
+  document.getElementById('reconResult').innerHTML = '';
+  document.getElementById('chartStatus').innerHTML = '';
+  document.getElementById('syncStatus').innerHTML = '';
+  document.getElementById('syncCountsStatus').innerHTML = '';
+  await loadQboStatus();
+}
+
+loadQboStatus();
+</script>
+{% endblock %}

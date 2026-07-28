@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Finz Accounting Pipeline{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/style.css?v=87" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg finz-nav sticky-top">
+    <div class="container-fluid px-3 px-lg-4">
+      <a class="navbar-brand finz-brand" href="/">
+        <span class="finz-brand-mark">Finz</span>
+        <span class="finz-brand-sub">BrightFix</span>
+        <span class="finz-brand-mark">Krishna Teja Reddy Suram Challenge Build</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <div class="navbar-nav ms-auto finz-nav-links">
+          <a class="nav-link {{ 'active' if active_page == 'dashboard' }}" href="/">Dashboard</a>
+          <a class="nav-link {{ 'active' if active_page == 'upload' }}" href="/upload">Upload</a>
+          <a class="nav-link {{ 'active' if active_page == 'transactions' }}" href="/transactions">Review</a>
+          <a class="nav-link {{ 'active' if active_page == 'pnl' }}" href="/pnl">P&amp;L</a>
+          <a class="nav-link {{ 'active' if active_page == 'reconciliation' }}" href="/reconciliation">Reconciliation</a>
+          <a class="nav-link {{ 'active' if active_page == 'runs' }}" href="/runs">Runs</a>
+          <button class="finz-theme-toggle" type="button" id="themeToggle" aria-label="Toggle light and dark theme">
+            <span class="theme-label">Light</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="finz-page container-fluid px-3 px-lg-4">
+    {% block content %}{% endblock %}
+  </div>
+
+  <footer class="finz-footer container-fluid px-3 px-lg-4">
+    <div class="finz-footer-inner">
+      <div>
+        <div class="finz-eyebrow">Challenge build</div>
+        <h6 class="mb-1">Built for the Finz Accounting Pipeline Challenge</h6>
+        <p class="finz-page-sub mb-0">This application was built as a complete local-to-QBO accounting pipeline demo for BrightFix Home Services LLC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <section class="finz-assistant" id="finzAssistant" aria-label="Finz challenge assistant">
+    <button class="finz-assistant-toggle" type="button" id="assistantToggle">Ask</button>
+    <div class="finz-assistant-panel" id="assistantPanel" aria-live="polite">
+      <div class="finz-assistant-head">
+        <div>
+          <strong>Finz Challenge Assistant</strong>
+          <p class="mb-0">Ask about P&amp;L, confidence scores, sync, or the app.</p>
+        </div>
+        <button type="button" class="btn-close" id="assistantClose" aria-label="Close"></button>
+      </div>
+      <div class="finz-assistant-body" id="assistantMessages">
+        <div class="assistant-msg assistant-msg-bot">
+          Hi. I can explain this challenge app or pull live P&amp;L summaries. Try one of these:
+        </div>
+        <div class="assistant-options">
+          <button type="button" data-question="What does this application do?">What does this app do?</button>
+          <button type="button" data-question="What is the P&L for May?">May P&amp;L</button>
+          <button type="button" data-question="What does confidence score mean?">Confidence score</button>
+          <button type="button" data-question="Show sync and reconciliation status">Sync status</button>
+          <button type="button" data-question="Give me details of the last run">Last run details</button>
+        </div>
+      </div>
+      <form class="finz-assistant-form" id="assistantForm">
+        <input id="assistantInput" class="form-control" placeholder="Ask about May P&L, features, duplicates..." autocomplete="off">
+        <button class="btn btn-primary" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <nav class="finz-mobile-tabbar d-lg-none">
+    <a href="/" class="{{ 'active' if active_page == 'dashboard' }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 13h4v8H3zM10 3h4v18h-4zM17 8h4v13h-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span>Dashboard</span>
+    </a>
+    <a href="/upload" class="{{ 'active' if active_page == 'upload' }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0l-4 4m4-4 4 4M5 20h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Upload</span>
+    </a>
+    <a href="/transactions" class="{{ 'active' if active_page == 'transactions' }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>Review</span>
+    </a>
+    <a href="/pnl" class="{{ 'active' if active_page == 'pnl' }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19l5-6 4 3 7-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>P&amp;L</span>
+    </a>
+    <a href="/reconciliation" class="{{ 'active' if active_page == 'reconciliation' }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 7h13M7 7l3-3M7 7l3 3M17 17H4M17 17l-3-3M17 17l-3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Sync</span>
+    </a>
+    <a href="/runs" class="{{ 'active' if active_page == 'runs' }}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>Runs</span>
+    </a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const NEW_YORK_TIME_ZONE = 'America/New_York';
+
+    function parseUtcTimestamp(value) {
+      if (!value) return null;
+      if (typeof value !== 'string') return new Date(value);
+      const hasTimezone = /(?:Z|[+-]\d{2}:?\d{2})$/i.test(value);
+      return new Date(hasTimezone ? value : `${value}Z`);
+    }
+
+    window.FinzFormat = {
+      dateTime(value) {
+        const date = parseUtcTimestamp(value);
+        if (!date || Number.isNaN(date.getTime())) return '';
+        return new Intl.DateTimeFormat('en-US', {
+          timeZone: NEW_YORK_TIME_ZONE,
+          year: 'numeric',
+          month: 'numeric',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit',
+          second: '2-digit',
+          timeZoneName: 'short',
+        }).format(date);
+      },
+    };
+
+    function applyTheme(theme) {
+      const safeTheme = theme === 'bright' ? 'bright' : 'dark';
+      document.documentElement.dataset.theme = safeTheme;
+      document.documentElement.dataset.bsTheme = safeTheme === 'bright' ? 'light' : 'dark';
+      localStorage.setItem('finz-theme', safeTheme);
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.querySelector('.theme-label').textContent = safeTheme === 'dark' ? 'Light' : 'Dark';
+        toggle.setAttribute('aria-pressed', safeTheme === 'bright' ? 'true' : 'false');
+      }
+    }
+
+    applyTheme(localStorage.getItem('finz-theme') || 'dark');
+    document.getElementById('themeToggle')?.addEventListener('click', () => {
+      applyTheme(document.documentElement.dataset.theme === 'dark' ? 'bright' : 'dark');
+    });
+
+    function money(cents) {
+      return (cents / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function assistantAdd(text, role = 'bot') {
+      const box = document.getElementById('assistantMessages');
+      const div = document.createElement('div');
+      div.className = `assistant-msg assistant-msg-${role}`;
+      div.innerHTML = text;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function monthFromQuestion(question) {
+      const q = question.toLowerCase();
+      if (q.includes('april') || q.includes('apr') || q.includes('2026-04')) return '2026-04';
+      if (q.includes('may') || q.includes('2026-05')) return '2026-05';
+      if (q.includes('june') || q.includes('jun') || q.includes('2026-06')) return '2026-06';
+      if (q.includes('total') || q.includes('apr-jun') || q.includes('overall')) return 'total';
+      return null;
+    }
+
+    async function answerPnl(question) {
+      const period = monthFromQuestion(question) || 'total';
+      const resp = await fetch('/api/pnl');
+      const data = await resp.json();
+      const p = data[period];
+      if (!p) return 'I could not find that P&amp;L period yet. Open <a href="/pnl">P&amp;L</a> to see available months.';
+      const label = period === 'total' ? 'Apr-Jun total' : period;
+      return `<strong>${label} P&amp;L summary</strong><br>
+        Revenue: $${money(p.revenue_cents)}<br>
+        COGS: $${money(-p.cogs_cents)}<br>
+        Gross profit: $${money(p.gross_profit_cents)}<br>
+        Operating expenses: $${money(-p.opex_cents)}<br>
+        Net profit: $${money(p.net_profit_cents)}<br>
+        <a href="/pnl?period=${period}">Open full P&amp;L details</a>`;
+    }
+
+    async function answerSync() {
+      const resp = await fetch('/api/dashboard/summary');
+      const data = await resp.json();
+      const c = data.counts;
+      const latest = data.reconciliation.latest;
+      return `<strong>Sync and reconciliation status</strong><br>
+        Canonical transactions synced: ${c.synced}<br>
+        Canonical pending sync: ${c.not_synced}<br>
+        Duplicates excluded from sync: ${c.duplicates_excluded_from_sync}<br>
+        Sync failures: ${c.sync_failed}<br>
+        Latest reconciliation: ${latest && latest.fully_reconciled ? 'Reconciled' : 'Needs review'}<br>
+        <a href="/reconciliation">Open reconciliation</a> or <a href="/runs">view run history</a>`;
+    }
+
+    async function answerLastRun() {
+      const resp = await fetch('/api/dashboard/summary');
+      const data = await resp.json();
+      const latestSync = data.quickbooks.latest_sync;
+      const latestRecon = data.reconciliation.latest;
+      if (!latestSync && !latestRecon) {
+        return 'No sync or reconciliation run has been recorded yet. Start from <a href="/reconciliation">Reconciliation</a>.';
+      }
+      return `<strong>Latest run details</strong><br>
+        ${latestSync ? `Latest QBO sync item: ${FinzFormat.dateTime(latestSync.synced_at)}<br>QBO type: ${latestSync.qbo_entity_type || '-'}<br>Status: ${latestSync.status}<br>` : ''}
+        ${latestRecon ? `Latest reconciliation: ${FinzFormat.dateTime(latestRecon.run_at)}<br>Period: ${latestRecon.period_label}<br>Result: ${latestRecon.fully_reconciled ? 'Reconciled' : 'Differences found'}<br>` : ''}
+        <a href="/runs">Open full run history</a>`;
+    }
+
+    async function assistantAnswer(question) {
+      const q = question.toLowerCase();
+      if (q.includes('p&l') || q.includes('profit') || q.includes('loss') || q.includes('may') || q.includes('april') || q.includes('june')) {
+        return answerPnl(question);
+      }
+      if ((q.includes('run') || q.includes('sync')) && (q.includes('last') || q.includes('latest') || q.includes('when') || q.includes('detail') || q.includes('happened'))) {
+        return answerLastRun();
+      }
+      if (q.includes('sync') || q.includes('quickbooks') || q.includes('reconcile') || q.includes('run')) {
+        return answerSync();
+      }
+      if (q.includes('confidence')) {
+        return 'The confidence score shows how sure the classifier is about the transaction category and QBO account. High scores usually come from deterministic rules. Lower scores are intentionally marked for review so a human can approve or correct them before sync. <a href="/transactions">Open Review</a>';
+      }
+      if (q.includes('feature') || q.includes('does') || q.includes('about') || q.includes('application')) {
+        return 'This app ingests bank exports, lets the user map columns, detects duplicates, classifies transactions with deterministic rules and optional Gemini fallback, supports manual review, generates cash-basis P&amp;L, syncs approved canonical transactions to QuickBooks Sandbox, and reconciles app totals against QBO. <a href="/">Open dashboard</a>';
+      }
+      if (q.includes('contact') || q.includes('email') || q.includes('linkedin') || q.includes('github') || q.includes('portfolio')) {
+        return 'For questions about this Finz challenge application, contact Krishna Teja at <a href="mailto:ksuram1@umbc.edu">ksuram1@umbc.edu</a>, <a href="https://www.linkedin.com/in/krishna-teja-reddy-s-93b210231/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://github.com/Krishnateja26?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>, or <a href="https://krishnateja26.github.io/KrishnaTeja_Portfolio-/" target="_blank" rel="noopener noreferrer">Portfolio</a>.';
+      }
+      return 'I can help with the app overview, features, P&amp;L by month, confidence score, duplicate handling, QuickBooks sync, reconciliation, and contact details.';
+    }
+
+    document.getElementById('assistantToggle')?.addEventListener('click', () => {
+      document.getElementById('finzAssistant')?.classList.add('open');
+    });
+    document.getElementById('assistantClose')?.addEventListener('click', () => {
+      document.getElementById('finzAssistant')?.classList.remove('open');
+    });
+    document.querySelectorAll('.assistant-options button').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const question = button.dataset.question;
+        assistantAdd(question, 'user');
+        assistantAdd(await assistantAnswer(question), 'bot');
+      });
+    });
+    document.getElementById('assistantForm')?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const input = document.getElementById('assistantInput');
+      const question = input.value.trim();
+      if (!question) return;
+      input.value = '';
+      assistantAdd(question, 'user');
+      assistantAdd(await assistantAnswer(question), 'bot');
+    });
+  </script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

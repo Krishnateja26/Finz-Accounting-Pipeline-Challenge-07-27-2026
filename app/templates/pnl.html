@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}P&amp;L &middot; Finz Accounting Pipeline{% endblock %}
+{% block content %}
+<h3>Cash-basis Profit &amp; Loss</h3>
+<p class="text-muted">Computed from approved, canonical transactions only. Click any account line to see the transactions behind it.</p>
+
+<ul class="nav nav-tabs mb-3" id="periodTabs"></ul>
+<div class="pnl-workspace">
+  <div id="pnlBody"></div>
+  <div id="drillDown" class="pnl-drill-panel"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+let allPeriods = {};
+let activePeriod = new URLSearchParams(window.location.search).get('period') || 'total';
+
+async function load() {
+  const resp = await fetch('/api/pnl');
+  allPeriods = await resp.json();
+  if (!allPeriods[activePeriod]) activePeriod = 'total';
+  const order = Object.keys(allPeriods).filter(k => k !== 'total').sort().concat(['total']);
+  const tabs = document.getElementById('periodTabs');
+  tabs.innerHTML = order.map(p => `
+    <li class="nav-item">
+      <a class="nav-link ${p === activePeriod ? 'active' : ''}" href="#" onclick="selectPeriod('${p}');return false;">
+        ${p === 'total' ? 'Apr-Jun (total)' : p}
+      </a>
+    </li>`).join('');
+  render();
+}
+
+function selectPeriod(p) {
+  activePeriod = p;
+  const url = new URL(window.location.href);
+  url.searchParams.set('period', p);
+  window.history.replaceState({}, '', url);
+  document.querySelectorAll('#periodTabs .nav-link').forEach(a => a.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('drillDown').innerHTML = '';
+  render();
+}
+
+function fmt(cents) {
+  return (cents / 100).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+}
+
+function render() {
+  const period = allPeriods[activePeriod];
+  if (!period) return;
+  const revenueLines = period.account_lines.filter(l => ['4000','4010','4020','4100'].includes(l.account_number));
+  const cogsLines = period.account_lines.filter(l => ['5000','5010'].includes(l.account_number));
+  const opexLines = period.account_lines.filter(l => !['4000','4010','4020','4100','5000','5010'].includes(l.account_number));
+
+  function section(title, lines) {
+    return `<tr class="pnl-section-row"><td colspan="2"><strong>${title}</strong></td></tr>` +
+      lines.map(l => `
+        <tr class="drill-row" onclick="showDrill('${l.account_number}')">
+          <td class="ps-4">${l.account_name}</td>
+          <td class="text-end">${fmt(l.amount_cents)}</td>
+        </tr>`).join('');
+  }
+
+  document.getElementById('pnlBody').innerHTML = `
+  <table class="table table-sm pnl-table">
+    <tbody>
+      ${section('Revenue', revenueLines)}
+      <tr class="pnl-subtotal-row"><td><strong>Total revenue</strong></td><td class="text-end"><strong>${fmt(period.revenue_cents)}</strong></td></tr>
+      ${section('Cost of Goods Sold', cogsLines)}
+      <tr class="pnl-subtotal-row"><td><strong>Total COGS</strong></td><td class="text-end"><strong>${fmt(-period.cogs_cents)}</strong></td></tr>
+      <tr class="pnl-subtotal-row pnl-gross-row"><td><strong>Gross profit</strong></td><td class="text-end"><strong>${fmt(period.gross_profit_cents)}</strong></td></tr>
+      ${section('Operating expenses', opexLines)}
+      <tr class="pnl-subtotal-row"><td><strong>Total operating expenses</strong></td><td class="text-end"><strong>${fmt(-period.opex_cents)}</strong></td></tr>
+      <tr class="pnl-total-row"><td><strong>Net profit</strong></td><td class="text-end"><strong>${fmt(period.net_profit_cents)}</strong></td></tr>
+    </tbody>
+  </table>`;
+}
+
+async function showDrill(accountNumber) {
+  const resp = await fetch(`/api/pnl/${activePeriod}/accounts/${accountNumber}/transactions`);
+  const txns = await resp.json();
+  document.getElementById('drillDown').innerHTML = `
+    <h5>Transactions - ${accountNumber}</h5>
+    <table class="table table-sm table-striped pnl-drill-table">
+      <thead><tr><th>Date</th><th>Description</th><th>Amount</th><th>Counterparty</th></tr></thead>
+      <tbody>
+        ${txns.map(t => `<tr><td>${t.transaction_date}</td><td>${t.description_normalized}</td>
+          <td>${fmt(t.amount_cents)}</td><td>${t.counterparty ?? ''}</td></tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
+load();
+</script>
+{% endblock %}

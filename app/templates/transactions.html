@@ -1,0 +1,355 @@
+{% extends "base.html" %}
+{% block title %}Review &middot; Finz Accounting Pipeline{% endblock %}
+{% block content %}
+<h3>Review &amp; correct classifications</h3>
+
+<div class="review-count-grid mb-3" id="countCards"></div>
+
+<h5 class="review-section-label">Filters &amp; actions</h5>
+<div class="review-filter-panel mb-3">
+  <div class="review-filter-selects">
+  <select id="filterReview" class="form-select form-select-sm review-filter-select" onchange="loadTransactions()">
+    <option value="">All review statuses</option>
+    <option value="needs_review">Needs review</option>
+    <option value="approved">Approved</option>
+    <option value="validation_error">Validation error</option>
+  </select>
+  <select id="filterDup" class="form-select form-select-sm review-filter-select" onchange="loadTransactions()">
+    <option value="">All duplicates</option>
+    <option value="canonical">Canonical</option>
+    <option value="exact_duplicate">Exact dup</option>
+    <option value="possible_duplicate">Possible dup</option>
+  </select>
+  <select id="filterMonth" class="form-select form-select-sm review-filter-select" onchange="loadTransactions()">
+    <option value="">All months</option>
+    <option value="2026-04">April 2026</option>
+    <option value="2026-05">May 2026</option>
+    <option value="2026-06">June 2026</option>
+  </select>
+  <select id="filterConfidence" class="form-select form-select-sm review-filter-select" onchange="loadTransactions()">
+    <option value="">Any confidence</option>
+    <option value="high">&gt; 90%</option>
+    <option value="mid">70-90%</option>
+    <option value="low">&lt; 70% / n/a</option>
+  </select>
+  </div>
+  <div class="review-filter-actions">
+  <button class="btn btn-sm btn-outline-secondary review-filter-btn" onclick="loadTransactions()">Refresh</button>
+  <button class="btn btn-sm btn-outline-secondary review-filter-btn" onclick="clearFilters()">Clear filters</button>
+  <button class="btn btn-sm btn-success review-bulk-approve-btn" onclick="approveClassified()">Approve classified canonical</button>
+  </div>
+</div>
+<div id="bulkResult" class="mb-3"></div>
+
+<h5 class="review-section-label">Transactions</h5>
+<div class="table-responsive">
+<table class="table table-sm table-striped align-middle review-table">
+  <thead>
+    <tr>
+      <th class="review-row-number">#</th><th>Date</th><th>Description</th><th>Amount</th><th>Type</th><th>Counterparty</th>
+      <th>Account</th><th>Confidence</th><th>Status</th><th>Duplicates</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="txnRows"></tbody>
+</table>
+</div>
+
+<!-- Correction modal -->
+<div class="modal" id="correctModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Correct classification</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mono small" id="correctDesc"></p>
+        <div class="mb-2">
+          <label class="form-label">Transaction type</label>
+          <select id="correctType" class="form-select">
+            <option value="revenue">Revenue</option>
+            <option value="cogs">Cost of Goods Sold</option>
+            <option value="operating_expense">Operating expense</option>
+            <option value="refund">Refund</option>
+            <option value="transfer">Transfer</option>
+            <option value="owner_contribution">Owner contribution</option>
+            <option value="owner_distribution">Owner distribution</option>
+            <option value="fixed_asset_purchase">Fixed asset purchase</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">QBO account</label>
+          <select id="correctAccount" class="form-select"></select>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Counterparty</label>
+          <input id="correctCounterparty" class="form-control">
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="saveAsRule">
+          <label class="form-check-label" id="saveAsRuleLabel">Apply this classification to future transactions matching this description</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary review-save-correction-btn" onclick="submitCorrection()">Save correction &amp; approve</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Review confirmation modal -->
+<div class="modal fade" id="reviewConfirmModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content review-confirm-modal">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm approval</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="reviewConfirmBody"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn review-filter-btn review-confirm-cancel" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn review-confirm-ok" id="reviewConfirmOk">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+let modal;
+let reviewConfirmModal;
+let activeTxnId = null;
+let chartOfAccounts = {};
+
+async function init() {
+  modal = new bootstrap.Modal(document.getElementById('correctModal'));
+  const resp = await fetch('/api/transactions/meta/chart-of-accounts');
+  chartOfAccounts = await resp.json();
+  const sel = document.getElementById('correctAccount');
+  sel.innerHTML = Object.entries(chartOfAccounts).map(([num, name]) => `<option value="${num}">${num} — ${name}</option>`).join('');
+  initReviewDropdowns();
+  loadTransactions();
+}
+
+function initReviewDropdowns() {
+  document.querySelectorAll('.review-filter-select').forEach((select) => {
+    if (select.dataset.enhanced === 'true') return;
+    select.dataset.enhanced = 'true';
+    const wrap = document.createElement('div');
+    wrap.className = 'review-custom-select';
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'review-custom-select-toggle';
+    const label = document.createElement('span');
+    label.className = 'review-custom-select-label';
+    const caret = document.createElement('span');
+    caret.className = 'review-custom-select-caret';
+    button.append(label, caret);
+    const menu = document.createElement('div');
+    menu.className = 'review-custom-select-menu';
+    Array.from(select.options).forEach((option) => {
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'review-custom-select-option';
+      item.dataset.value = option.value;
+      item.textContent = option.textContent;
+      item.addEventListener('click', () => {
+        select.value = option.value;
+        syncReviewDropdown(select, wrap);
+        wrap.classList.remove('open');
+        loadTransactions();
+      });
+      menu.appendChild(item);
+    });
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.review-custom-select.open').forEach((openWrap) => {
+        if (openWrap !== wrap) openWrap.classList.remove('open');
+      });
+      wrap.classList.toggle('open');
+    });
+    wrap.append(button, menu);
+    select.insertAdjacentElement('afterend', wrap);
+    syncReviewDropdown(select, wrap);
+  });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.review-custom-select')) {
+      document.querySelectorAll('.review-custom-select.open').forEach((wrap) => wrap.classList.remove('open'));
+    }
+  });
+}
+
+function syncReviewDropdown(select, wrap = select.nextElementSibling) {
+  if (!wrap || !wrap.classList.contains('review-custom-select')) return;
+  const selected = select.options[select.selectedIndex];
+  wrap.querySelector('.review-custom-select-label').textContent = selected ? selected.textContent : '';
+  wrap.querySelectorAll('.review-custom-select-option').forEach((item) => {
+    item.classList.toggle('selected', item.dataset.value === select.value);
+  });
+}
+
+function confidenceBadge(c) {
+  if (c === null || c === undefined) return '<span class="badge badge-confidence-none">n/a</span>';
+  const pct = Math.round(c * 100);
+  const cls = c >= 0.95 ? 'badge-confidence-high' : c >= 0.75 ? 'badge-confidence-mid' : 'badge-confidence-low';
+  return `<span class="badge ${cls}">${pct}%</span>`;
+}
+
+async function loadTransactions() {
+  loadCounts();
+  const params = new URLSearchParams();
+  const rs = document.getElementById('filterReview').value;
+  const ds = document.getElementById('filterDup').value;
+  const month = document.getElementById('filterMonth').value;
+  const conf = document.getElementById('filterConfidence').value;
+  if (rs) params.set('review_status', rs);
+  if (ds) params.set('duplicate_status', ds);
+  if (month) params.set('month', month);
+  if (conf) params.set('confidence_range', conf);
+
+  const resp = await fetch('/api/transactions?' + params.toString());
+  const txns = await resp.json();
+  const rows = document.getElementById('txnRows');
+  rows.innerHTML = txns.map((t, idx) => `
+    <tr>
+      <td class="review-row-number mono">${idx + 1}</td>
+      <td>${t.transaction_date}</td>
+      <td class="mono" title="${t.description_original}">${t.description_normalized.slice(0, 40)}</td>
+      <td>${(t.amount_cents / 100).toFixed(2)}</td>
+      <td>${t.transaction_type ?? '<em>unclassified</em>'}</td>
+      <td>${t.counterparty ?? ''}</td>
+      <td>${t.qbo_account_number ?? ''}</td>
+      <td>${confidenceBadge(t.classification_confidence)}</td>
+      <td><span class="badge ${t.review_status === 'approved' ? 'badge-status-approved' : 'badge-status-review'}">${t.review_status}</span></td>
+      <td>${t.duplicate_status !== 'canonical' ? `<span class="badge badge-duplicate">${t.duplicate_status}</span>` : ''}</td>
+      <td>
+        <div class="review-actions-cell">
+          <button class="btn btn-sm btn-outline-primary review-action-correct" onclick='openCorrect(${JSON.stringify(t)})'>Correct</button>
+          ${t.review_status !== 'approved' && t.qbo_account_number ? `<button class="btn btn-sm btn-outline-success review-action-approve" onclick="approve('${t._id}')">Approve</button>` : ''}
+        </div>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function clearFilters() {
+  document.getElementById('filterReview').value = '';
+  document.getElementById('filterDup').value = '';
+  document.getElementById('filterMonth').value = '';
+  document.getElementById('filterConfidence').value = '';
+  document.querySelectorAll('.review-filter-select').forEach((select) => syncReviewDropdown(select));
+  loadTransactions();
+}
+
+function formatCounts(title, counts) {
+  const entries = Object.entries(counts || {}).sort((a, b) => b[1] - a[1]);
+  if (!entries.length) return '';
+  return `
+    <div class="review-count-card-wrap">
+      <div class="card h-100 review-count-card">
+        <div class="card-body py-2">
+          <div class="fw-semibold mb-1">${title}</div>
+          ${entries.map(([label, count]) => `
+            <div class="d-flex justify-content-between small">
+              <span>${label}</span><span class="mono">${count}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>`;
+}
+
+async function loadCounts() {
+  const resp = await fetch('/api/transactions/meta/counts');
+  const counts = await resp.json();
+  document.getElementById('countCards').innerHTML = `
+    <div class="review-count-card-wrap">
+      <div class="card h-100 review-count-card">
+        <div class="card-body py-2">
+          <div class="fw-semibold mb-1">Total records</div>
+          <div class="display-6">${counts.total}</div>
+        </div>
+      </div>
+    </div>
+    ${formatCounts('Review status', counts.by_review_status)}
+    ${formatCounts('Duplicate status', counts.by_duplicate_status)}
+    ${formatCounts('Classification', counts.by_transaction_type)}
+    ${formatCounts('Source', counts.by_classification_source)}
+  `;
+}
+
+function openCorrect(t) {
+  activeTxnId = t._id;
+  document.getElementById('correctDesc').innerText = t.description_original + '  (' + (t.amount_cents/100).toFixed(2) + ')';
+  document.getElementById('correctType').value = t.transaction_type || 'revenue';
+  document.getElementById('correctAccount').value = t.qbo_account_number || Object.keys(chartOfAccounts)[0];
+  document.getElementById('correctCounterparty').value = t.counterparty || '';
+  document.getElementById('saveAsRule').checked = false;
+  document.getElementById('saveAsRuleLabel').innerText =
+    `Apply this classification to future transactions matching "${t.description_normalized.split(' ').slice(0,3).join(' ')}"`;
+  modal.show();
+}
+
+async function submitCorrection() {
+  const body = {
+    transaction_type: document.getElementById('correctType').value,
+    account_number: document.getElementById('correctAccount').value,
+    counterparty: document.getElementById('correctCounterparty').value || null,
+    save_as_rule: document.getElementById('saveAsRule').checked,
+    rule_match_value: document.getElementById('saveAsRule').checked
+      ? document.getElementById('correctCounterparty').value
+      : null,
+  };
+  await fetch(`/api/transactions/${activeTxnId}/correct`, {
+    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body),
+  });
+  modal.hide();
+  loadTransactions();
+}
+
+async function approve(id) {
+  await fetch(`/api/transactions/${id}/approve`, {
+    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({}),
+  });
+  loadTransactions();
+}
+
+function askReviewConfirm(message) {
+  return new Promise((resolve) => {
+    const modalEl = document.getElementById('reviewConfirmModal');
+    const okButton = document.getElementById('reviewConfirmOk');
+    document.getElementById('reviewConfirmBody').textContent = message;
+    reviewConfirmModal = reviewConfirmModal || new bootstrap.Modal(modalEl);
+    let accepted = false;
+
+    const onOk = () => {
+      accepted = true;
+      reviewConfirmModal.hide();
+    };
+    const onHidden = () => {
+      okButton.removeEventListener('click', onOk);
+      modalEl.removeEventListener('hidden.bs.modal', onHidden);
+      resolve(accepted);
+    };
+
+    okButton.addEventListener('click', onOk);
+    modalEl.addEventListener('hidden.bs.modal', onHidden);
+    reviewConfirmModal.show();
+  });
+}
+
+async function approveClassified() {
+  const confirmed = await askReviewConfirm('Approve all canonical transactions that already have a type and QBO account?');
+  if (!confirmed) return;
+  const resp = await fetch('/api/transactions/bulk/approve-classified', {
+    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({}),
+  });
+  const data = await resp.json();
+  document.getElementById('bulkResult').innerHTML =
+    `<div class="alert alert-success">Approved ${data.approved_count} classified canonical transactions.</div>`;
+  loadCounts();
+  loadTransactions();
+}
+
+init();
+</script>
+{% endblock %}
