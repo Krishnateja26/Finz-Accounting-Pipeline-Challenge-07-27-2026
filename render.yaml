@@ -14,6 +14,8 @@ services:
         sync: false
       - key: MONGO_DB_NAME
         value: finz_accounting
+      - key: SECRET_KEY
+        sync: false
       - key: GEMINI_API_KEY
         sync: false
       - key: GEMINI_MODEL
@@ -26,3 +28,5 @@ services:
         sync: false
       - key: QBO_ENVIRONMENT
         value: sandbox
+      - key: ADMIN_RESET_TOKEN
+        sync: false
