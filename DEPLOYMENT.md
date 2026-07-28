@@ -38,6 +38,8 @@ https://YOUR_DEPLOYED_HOST/api/quickbooks/callback
 
 6. Open `/reconciliation` and reconnect QuickBooks.
 
+If Render starts on an unexpected Python version, pin it to `3.12.13` by keeping `PYTHON_VERSION=3.12.13` in `render.yaml` or by using `runtime.txt` with `python-3.12.13`. This avoids the `pandas` source-build failure seen on Python 3.14.
+
 ## Resetting a Deployed Test Run
 
 Use this only for sandbox/demo resets. Keep `ADMIN_RESET_TOKEN` private.
