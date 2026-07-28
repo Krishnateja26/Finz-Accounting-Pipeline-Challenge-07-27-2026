@@ -108,4 +108,3 @@ Gross profit: 206,425
 Operating expenses: -138,245
 Net profit: 68,180
 ```
-

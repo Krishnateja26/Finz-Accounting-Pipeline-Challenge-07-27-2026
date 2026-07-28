@@ -1,10 +1,10 @@
-# BrightFix Home Services LLC — Internal Cash-Basis P&L
+# BrightFix Home Services LLC - Internal Cash-Basis P&L
 Generated from `data/sample_raw_transactions.json` via normalization -> deduplication -> classification -> pnl_service.
 All 195 canonical transactions classified deterministically and approved; 5 duplicates excluded.
 
 ## Summary
 
-| P&L section | April 2026 | May 2026 | June 2026 | Apr–Jun total |
+| P&L section | April 2026 | May 2026 | June 2026 | Apr-Jun total |
 |---|---:|---:|---:|---:|
 | Revenue after refunds | $98,175 | $106,575 | $95,525 | $300,275 |
 | Cost of Goods Sold | $31,325 | $32,050 | $30,475 | $93,850 |
@@ -42,7 +42,7 @@ All 195 canonical transactions classified deterministically and approved; 5 dupl
 | Tax Reserve | $42,000 |
 | **Combined cash** | **$81,380** |
 
-Checksum: $68,180 net profit + $25,000 owner contribution − $5,000 owner distribution − $6,800 equipment purchase = **$81,380** ✓
+Checksum: $68,180 net profit + $25,000 owner contribution - $5,000 owner distribution - $6,800 equipment purchase = **$81,380**.
 
 All figures above exactly match the pipeline output validated in `tests/test_pnl.py` and `tests/test_duplicates.py`.
 
