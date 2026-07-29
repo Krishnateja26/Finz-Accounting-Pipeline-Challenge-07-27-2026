@@ -19,9 +19,41 @@
 <div id="resetStatus" class="mb-4"></div>
 <div id="reconResult"></div>
 
+<div class="modal fade" id="resetAppModal" tabindex="-1" aria-labelledby="resetAppModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="resetAppModalLabel">Reset Finz app data</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-warning mb-3">
+          This clears uploaded files, transactions, sync logs, reconciliation runs, and the saved QuickBooks connection in this app.
+          Reset Intuit sandbox first, then run this reset, then reconnect QuickBooks.
+        </div>
+        <label for="resetTokenInput" class="form-label">Admin reset token</label>
+        <input
+          type="password"
+          class="form-control"
+          id="resetTokenInput"
+          placeholder="Enter admin reset token"
+          autocomplete="off"
+        >
+        <div id="resetModalMessage" class="small text-muted mt-2"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmResetButton" onclick="confirmResetAppData()">Reset app data</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
 {% block scripts %}
 <script>
+const resetAppModal = () => bootstrap.Modal.getOrCreateInstance(document.getElementById('resetAppModal'));
+
 async function loadQboStatus() {
   const resp = await fetch('/api/quickbooks/status');
   const data = await resp.json();
@@ -136,41 +168,75 @@ async function runReconciliation() {
 }
 
 async function resetAppData() {
-  const warning = [
-    'This clears uploaded files, transactions, sync logs, reconciliation runs,',
-    'and the saved QuickBooks connection in this app.',
-    '',
-    'Reset Intuit sandbox first, then run this reset, then reconnect QuickBooks.',
-  ].join('\n');
-  if (!confirm(warning)) return;
+  const modal = resetAppModal();
+  const input = document.getElementById('resetTokenInput');
+  const message = document.getElementById('resetModalMessage');
+  input.value = '';
+  message.textContent = 'Enter the admin reset token to continue.';
+  modal.show();
+  setTimeout(() => input.focus(), 150);
+}
 
-  const token = prompt('Enter admin reset token');
-  if (!token) return;
-
-  document.getElementById('resetStatus').innerHTML =
-    '<div class="alert alert-warning"><span class="spinner-border spinner-border-sm me-2"></span>Resetting app data...</div>';
-
-  const resp = await fetch('/api/admin/reset', {
-    method: 'POST',
-    headers: {'X-Admin-Reset-Token': token},
-  });
-  const data = await resp.json();
-  if (!resp.ok) {
-    document.getElementById('resetStatus').innerHTML =
-      `<div class="alert alert-danger">Reset failed: ${data.detail || JSON.stringify(data)}</div>`;
+async function confirmResetAppData() {
+  const input = document.getElementById('resetTokenInput');
+  const token = input.value.trim();
+  const message = document.getElementById('resetModalMessage');
+  const confirmButton = document.getElementById('confirmResetButton');
+  if (!token) {
+    message.textContent = 'Please enter the reset token.';
+    message.className = 'small text-danger mt-2';
     return;
   }
 
-  document.getElementById('resetStatus').innerHTML = `
-    <div class="alert alert-success">
-      App data reset. QuickBooks saved connection removed: ${data.qbo_oauth_deleted ? 'yes' : 'no'}.
-      <details class="mt-2"><summary>Reset details</summary><pre>${JSON.stringify(data, null, 2)}</pre></details>
-    </div>`;
-  document.getElementById('reconResult').innerHTML = '';
-  document.getElementById('chartStatus').innerHTML = '';
-  document.getElementById('syncStatus').innerHTML = '';
-  document.getElementById('syncCountsStatus').innerHTML = '';
-  await loadQboStatus();
+  message.className = 'small text-muted mt-2';
+  message.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Resetting app data...';
+  confirmButton.disabled = true;
+
+  try {
+    const resp = await fetch('/api/admin/reset', {
+      method: 'POST',
+      headers: {'X-Admin-Reset-Token': token},
+    });
+    const raw = await resp.text();
+    let data;
+    try {
+      data = JSON.parse(raw || '{}');
+    } catch (parseErr) {
+      data = {detail: raw || String(parseErr)};
+    }
+    if (!resp.ok) {
+      const detail = data.detail || data.message || JSON.stringify(data);
+      const friendlyDetail = resp.status === 404
+        ? 'Reset endpoint not found on this server. You are likely on an older app process or the wrong port. Open the updated app copy and refresh the page.'
+        : resp.status === 403
+          ? 'Reset token is missing, invalid, or admin reset is not configured in this app.'
+          : detail;
+      document.getElementById('resetStatus').innerHTML =
+        `<div class="alert alert-danger">Reset failed: ${friendlyDetail}</div>`;
+      message.textContent = 'Reset failed. Check the token and backend response below.';
+      message.className = 'small text-danger mt-2';
+      return;
+    }
+
+    bootstrap.Modal.getInstance(document.getElementById('resetAppModal'))?.hide();
+    document.getElementById('resetStatus').innerHTML = `
+      <div class="alert alert-success">
+        App data reset. QuickBooks saved connection removed: ${data.qbo_oauth_deleted ? 'yes' : 'no'}.
+        <details class="mt-2"><summary>Reset details</summary><pre>${JSON.stringify(data, null, 2)}</pre></details>
+      </div>`;
+    document.getElementById('reconResult').innerHTML = '';
+    document.getElementById('chartStatus').innerHTML = '';
+    document.getElementById('syncStatus').innerHTML = '';
+    document.getElementById('syncCountsStatus').innerHTML = '';
+    await loadQboStatus();
+  } catch (err) {
+    document.getElementById('resetStatus').innerHTML =
+      `<div class="alert alert-danger">Reset failed: ${err}</div>`;
+    message.textContent = 'Reset failed due to a network or server issue.';
+    message.className = 'small text-danger mt-2';
+  } finally {
+    confirmButton.disabled = false;
+  }
 }
 
 loadQboStatus();

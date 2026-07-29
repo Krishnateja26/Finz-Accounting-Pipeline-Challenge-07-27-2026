@@ -3,9 +3,10 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from pymongo.errors import AutoReconnect, PyMongoError, ServerSelectionTimeoutError
 
 from app.api import admin, dashboard, pnl, quickbooks, reconciliation, transactions, uploads
 from app.config import get_settings
@@ -16,7 +17,10 @@ logging.basicConfig(level=logging.INFO)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await ensure_indexes()
+    try:
+        await ensure_indexes()
+    except (AutoReconnect, PyMongoError, ServerSelectionTimeoutError) as exc:
+        logging.warning("MongoDB index initialization skipped because the database is unavailable: %s", exc)
     yield
     await close_client()
 
@@ -35,6 +39,26 @@ app.include_router(quickbooks.router)
 app.include_router(reconciliation.router)
 app.include_router(dashboard.router)
 app.include_router(admin.router)
+
+
+def _mongo_unavailable_response(request: Request, exc: Exception) -> JSONResponse:
+    return JSONResponse(
+        status_code=503,
+        content={
+            "detail": (
+                "MongoDB connection issue. Please check your Atlas cluster status, "
+                "IP access list, username/password, and network connectivity, then try again."
+            ),
+            "error": type(exc).__name__,
+        },
+    )
+
+
+@app.exception_handler(ServerSelectionTimeoutError)
+@app.exception_handler(AutoReconnect)
+@app.exception_handler(PyMongoError)
+async def mongo_exception_handler(request: Request, exc: Exception):
+    return _mongo_unavailable_response(request, exc)
 
 
 def _ctx(request: Request, active_page: str, **extra):

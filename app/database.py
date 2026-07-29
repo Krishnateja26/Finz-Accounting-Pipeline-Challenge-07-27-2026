@@ -31,7 +31,12 @@ def get_client() -> AsyncIOMotorClient:
         if settings.mongo_uri.startswith("mongomock://"):
             _client = AsyncMongoMockClient()
         else:
-            _client = AsyncIOMotorClient(settings.mongo_uri)
+            _client = AsyncIOMotorClient(
+                settings.mongo_uri,
+                serverSelectionTimeoutMS=5000,
+                connectTimeoutMS=5000,
+                socketTimeoutMS=20000,
+            )
     return _client
 
 
