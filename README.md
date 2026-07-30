@@ -314,19 +314,65 @@ See `deliverables/final_validation.md` for the detailed validation evidence.
 
 ## Deployment
 
-Use GitHub as the private source repository and deploy the FastAPI app to an
-application host such as Render, Railway, Fly.io, Azure App Service, Google
-Cloud Run, or AWS. GitHub Pages is not suitable because this is a server
-application.
+The challenge app is deployed as a live FastAPI web service on Render and is
+reachable here:
 
-This repo includes:
+https://finz-accounting-pipeline-challenge-07-27.onrender.com/
 
-- `render.yaml` for Render deployment.
-- `Dockerfile` using `${PORT:-8000}` for container platforms.
-- `.dockerignore` and `.gitignore` to keep `.env`, `.venv`, and generated
-  files out of source control and deploy bundles.
+### What we did to connect and deploy the app
 
-For detailed steps and required environment variables, see `DEPLOYMENT.md`.
+1. Put the app source in GitHub and connected the repository to Render.
+2. Set the application environment variables in Render, including:
+   - `MONGO_URI`
+   - `MONGO_DB_NAME`
+   - `SECRET_KEY`
+   - `ADMIN_RESET_TOKEN`
+   - `GEMINI_API_KEY`
+   - `QBO_CLIENT_ID`
+   - `QBO_CLIENT_SECRET`
+   - `QBO_REDIRECT_URI`
+3. Pointed MongoDB Atlas at the app by adding the required IP allowlist
+   entries during troubleshooting:
+   - `74.220.50.0/24`
+   - `74.220.58.0/24`
+4. Updated the Intuit/QuickBooks redirect URI to the deployed callback:
+   - `https://finz-accounting-pipeline-challenge-07-27.onrender.com/api/quickbooks/callback`
+5. Fixed Render build issues caused by Python dependency compilation by:
+   - pinning a compatible Python version
+   - upgrading `pandas` and `pydantic` for the hosting environment
+6. Fixed the Render startup command so the app runs with Uvicorn on the
+   platform port instead of a missing `gunicorn` entry point.
+7. Added a browser-based reset modal and safer API error handling so Mongo and
+   reset issues show a clear message instead of a generic internal server
+   error.
+
+### Challenges we hit and how they were handled
+
+- **Pandas / pydantic build failures on Render**: Render initially used a newer
+  Python runtime that tried to compile binary dependencies from source. We
+  resolved this by pinning a supported Python version and updating the package
+  versions to ones that ship clean wheels for the target environment.
+- **Missing `gunicorn` on deploy**: Render defaulted to a `gunicorn` startup
+  command that was not present in the project. We switched the service to start
+  the FastAPI app directly with `uvicorn app.main:app --host 0.0.0.0 --port
+  $PORT`.
+- **MongoDB Atlas connectivity**: The app showed a clear connection warning when
+  Atlas was not reachable, which helped confirm that the issue was network
+  access / allowlisting rather than app logic.
+- **QuickBooks redirect mismatch**: Intuit rejected the OAuth flow until the
+  deployed callback URL exactly matched the value registered in the Intuit app
+  settings.
+
+### Local and deployment notes
+
+- Local development worked on `http://127.0.0.1:8001` during reset testing.
+- The app uses MongoDB Atlas in deployed mode, so the running service needs a
+  valid Atlas connection string and matching network access rules.
+- `ADMIN_RESET_TOKEN` must stay private. It is used only for the app's reset
+  modal.
+
+For the full deployment checklist and environment variable reference, see
+`DEPLOYMENT.md`.
 
 ## Tests
 

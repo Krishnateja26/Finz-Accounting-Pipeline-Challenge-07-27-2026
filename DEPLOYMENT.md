@@ -30,15 +30,35 @@ This repository includes `render.yaml`.
 2. In Render, create a new Blueprint or Web Service from the repo.
 3. Add the environment variables above.
 4. Deploy.
-5. In the Intuit Developer app, add the deployed redirect URI:
+5. In the Intuit Developer app, add the deployed redirect URI exactly as it
+   appears in production:
 
 ```text
-https://YOUR_DEPLOYED_HOST/api/quickbooks/callback
+https://finz-accounting-pipeline-challenge-07-27.onrender.com/api/quickbooks/callback
 ```
 
 6. Open `/reconciliation` and reconnect QuickBooks.
 
-If Render starts on an unexpected Python version, pin it to `3.12.13` by keeping `PYTHON_VERSION=3.12.13` in `render.yaml` or by using `runtime.txt` with `python-3.12.13`. This avoids the `pandas` source-build failure seen on Python 3.14.
+If Render starts on an unexpected Python version, pin it to `3.12.13` by
+keeping `PYTHON_VERSION=3.12.13` in `render.yaml` or by using `runtime.txt`
+with `python-3.12.13`. This avoids the `pandas` source-build failure seen on
+Python 3.14.
+
+### Atlas IP allowlist used during troubleshooting
+
+These CIDR ranges were added to MongoDB Atlas while validating the deployment:
+
+- `74.220.50.0/24`
+- `74.220.58.0/24`
+
+Add them as separate allowlist entries in Atlas:
+
+1. Open MongoDB Atlas.
+2. Go to **Security** -> **Network Access**.
+3. Click **Add IP Address**.
+4. Choose **Add a CIDR block**.
+5. Paste one range per entry, for example `74.220.50.0/24`.
+6. Save, then repeat for the second range.
 
 ## Resetting a Deployed Test Run
 
@@ -56,6 +76,18 @@ Use this only for sandbox/demo resets. Keep `ADMIN_RESET_TOKEN` private.
 10. Run reconciliation.
 
 The reset clears uploaded rows, normalized transactions, learned rules, sync logs, reconciliation runs, and the saved QuickBooks OAuth connection. It also rotates the app's sync namespace so QuickBooks does not reuse old idempotency request IDs.
+
+### Deployment issues we hit and resolved
+
+- **MongoDB connection failures** were surfaced to the UI with a friendly
+  message instead of a generic 500 error.
+- **Render startup failures** happened when the platform defaulted to a command
+  that was not installed in the app. The working start command uses Uvicorn and
+  the Render port.
+- **Intuit OAuth redirect errors** were fixed by matching the deployed callback
+  URL exactly in the Intuit developer app.
+- **Older local app processes** could still show stale reset behavior; the
+  working local validation ended up on `http://127.0.0.1:8001`.
 
 ## Railway
 
