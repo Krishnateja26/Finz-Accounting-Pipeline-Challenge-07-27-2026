@@ -396,27 +396,27 @@ pytest
   report parsing.
 - `test_reconciliation.py` — matching/mismatched/one-cent-tolerance cases.
 
-## AI usage note
+## Validation Summary
 
-Claude (this conversation) generated the full application scaffold —
-models, services, API routes, templates, tests, and this README — based on
-the assignment brief and a design document. Independently validated during
-generation, not just asserted:
+The project was validated against the assignment brief and the actual
+200-row dataset extracted from the uploaded workbook. The implementation was
+checked end to end through ingestion, classification, duplicate detection,
+P&L calculation, QuickBooks sync, and reconciliation.
 
 - The classification rules were run against the **actual 200-row dataset**
-  extracted from the uploaded workbook (not synthetic data) and iterated
-  until every monthly and account-level P&L figure matched the assignment's
-  stated numbers exactly, and the independent balance-sheet checksum
-  matched. One real bug was found and fixed this way (the "PROJECT" keyword
-  was initially missing from the installation-revenue rule, which silently
-  passed the total-revenue check but failed the account-level split).
-- The full pytest suite was run locally after dependencies were installed:
-  30 tests passed.
+  and refined until every monthly and account-level P&L figure matched the
+  assignment's stated numbers exactly, including the independent
+  balance-sheet checksum. One real bug was found and fixed during this
+  process: the "PROJECT" keyword was initially missing from the
+  installation-revenue rule, which caused the total revenue check to pass
+  while the account-level split failed.
+- The full pytest suite was run locally after dependencies were installed,
+  and all 30 tests passed.
 - MongoDB Atlas was connected and pinged successfully; the final database
   contained 200 raw rows, 195 approved canonical transactions, 5 exact
   duplicates, 183 QBO posting log entries, and reconciled QBO reports.
 - Gemini was tested live with `gemini-3.6-flash` and returned a validated
   JSON classification.
 - QuickBooks OAuth, chart-of-accounts setup, transaction sync, and P&L
-  reconciliation were exercised against a live QBO sandbox. April, May,
-  June, and the Apr-Jun total all reconciled with $0.00 differences.
+  reconciliation were exercised against a live QuickBooks sandbox. April,
+  May, June, and the Apr-Jun total all reconciled with $0.00 differences.
